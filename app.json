@@ -1,0 +1,13 @@
+{
+  "pages":[
+    "pages/calculator/calculator",
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "猫咪工具箱",
+    "navigationBarTextStyle":"black"
+  }
+}
