@@ -1,0 +1,10 @@
+<include src="../templates/header" />
+<button type="default" bindtap="btnClick">{{btntext}}</button>
+
+<view wx:for="{{news}}" wx:for-item="news_item" wx:for-index="news_index" wx:key="key">
+  {{news_index}}--{{news_item}}
+
+</view>
+
+<import src="../templates/footer" />
+<template is="footer1" data="{{text:'导入模版内容...'}}"/>

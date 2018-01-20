@@ -1,0 +1,11 @@
+<template name="footer1">
+
+这是底部内容1 -- {{text}}
+
+</template>
+
+<template name="footer2">
+
+这是底部内容2 -- {{text}}
+
+</template>
