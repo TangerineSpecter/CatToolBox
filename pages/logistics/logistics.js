@@ -5,17 +5,20 @@ Page({
    * 页面的初始数据
    */
   data: {
-    expressNu:null
+    expressNu: null,
+    expressInfo: null
   },
 
   queryClick: function () {
+    var thispage = this;
     app.getExpressInfo(this.data.expressNu, function (data) {
+      thispage.setData({ expressInfo: data})
       console.log(data)
     })
   },
 
-  input:function(data){
-    this.setData({expressNu:data.detail.value});
+  input: function (data) {
+    this.setData({ expressNu: data.detail.value });
     console.log(data);
   },
 

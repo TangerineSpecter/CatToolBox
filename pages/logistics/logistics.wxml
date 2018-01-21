@@ -1,5 +1,12 @@
 <!--pages/logistics/logistics.wxml-->
 <view class='container'>
-  <input placeholder="请输入物流单号" bindinput='input'/>
+  <input placeholder="请输入物流单号" bindinput='input' />
   <button type='primary' bindtap="queryClick">查询</button>
+
+  <scroll-view scroll-y="true" style="height:200px;">
+    <view wx:for="{{expressInfo.Traces}}" wx:key="key">
+      <text>{{item.AcceptStation}}</text>
+      
+    </view>
+  </scroll-view>
 </view>

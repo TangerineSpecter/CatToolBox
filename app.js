@@ -1,4 +1,6 @@
 //app.js
+const api_key = require('utils/config.js').logistics_key;
+const api_url = require('utils/config.js').logistics_address;
 App({
   onLaunch: function () {
     // 展示本地存储能力
@@ -39,18 +41,27 @@ App({
   },
 
   getExpressInfo: function (nu, cb) {
-    console.log("物流查询")
+    var apikey= "";
+    var jsonData = {
+      'LogisticCode': nu,
+      'ShipperCode': 'ZTO'
+    }
+  
+    var RequestData = escape(JSON.stringify(jsonData));
+    console.log(JSON.stringify(jsonData));
+    console.log(RequestData);
+
     wx.request({
-      url: 'https://api.kdniao.cc/Ebusiness/EbusinessOrderHandle.aspx',
+      url: "https://api.kdniao.cc/Ebusiness/EbusinessOrderHandle.aspx",
       data: {
-        'EBusinessID': '',
-        'RequestData': '%7b%22LogisticCode%22%3a%22'+nu+'%22%2c%22ShipperCode%22%3a%22ZTO%22%7d',
+        'EBusinessID': '1321315',
+        'RequestData': RequestData,
         'RequestType': '1002',
-        'DataSign': "YTQxMGYxYzc4NDc2Y2JkMzMyNjg2YWU4MzdhMmIwZWU%3d",
+        'DataSign': "YTQxMGYxYzc4NDc2Y2JkMzMyNjg2YWU4MzdhMmIwZWU=",
         'DataType': '2'
       },
       header: {
-        
+
       },
       success: function (res) {
         //console.log(res.data)
