@@ -1,0 +1,22 @@
+<include src="../templates/header" />
+<button type="default" bindtap="btnClick">{{btntext}}</button>
+<view class='view1' bindlongtap='view1click' id="view1" data-title="新闻标题" data-id="100">
+  view 11
+  <view class='view2' bindtap='view2click' id="view2">
+    view 22
+    <view class='view3' catchtap='view3click' id="view3">
+      view 33
+
+    </view>
+  </view>
+</view>
+
+
+
+<view wx:for="{{news}}" wx:for-item="news_item" wx:for-index="news_index" wx:key="key">
+  {{news_index}}--{{news_item}}
+
+</view>
+
+<import src="../templates/footer" />
+<template is="footer1" data="{{text:'导入模版内容...'}}" />

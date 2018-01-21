@@ -2,7 +2,9 @@
   "pages":[
     "pages/calculator/calculator",
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/demo/demo",
+    "pages/logistics/logistics"
   ],
   "window":{
     "backgroundTextStyle":"light",

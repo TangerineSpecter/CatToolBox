@@ -1,0 +1,7 @@
+/* pages/logistics/logistics.wxss */
+input{
+  border: 2px solid red;
+  width: 60%;
+  margin: 5%;
+  padding: 5px
+}

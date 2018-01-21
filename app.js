@@ -36,5 +36,26 @@ App({
   },
   globalData: {
     userInfo: null
+  },
+
+  getExpressInfo: function (nu, cb) {
+    console.log("物流查询")
+    wx.request({
+      url: 'https://api.kdniao.cc/Ebusiness/EbusinessOrderHandle.aspx',
+      data: {
+        'EBusinessID': '',
+        'RequestData': '%7b%22LogisticCode%22%3a%22'+nu+'%22%2c%22ShipperCode%22%3a%22ZTO%22%7d',
+        'RequestType': '1002',
+        'DataSign': "YTQxMGYxYzc4NDc2Y2JkMzMyNjg2YWU4MzdhMmIwZWU%3d",
+        'DataType': '2'
+      },
+      header: {
+        
+      },
+      success: function (res) {
+        //console.log(res.data)
+        cb(res.data)
+      }
+    })
   }
 })

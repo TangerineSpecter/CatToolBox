@@ -1,0 +1,5 @@
+<!--pages/logistics/logistics.wxml-->
+<view class='container'>
+  <input placeholder="请输入物流单号" bindinput='input'/>
+  <button type='primary' bindtap="queryClick">查询</button>
+</view>
