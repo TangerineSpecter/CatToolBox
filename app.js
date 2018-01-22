@@ -1,6 +1,8 @@
-//app.js
+//app.js author:丢失的橘子
 const api_key = require('utils/config.js').logistics_key;
 const api_url = require('utils/config.js').logistics_address;
+var Base64 = require('utils/base64.modified.js');
+var MD5 = require('/utils/md5.js')
 App({
   onLaunch: function () {
     // 展示本地存储能力
@@ -40,16 +42,18 @@ App({
     userInfo: null
   },
 
-  getExpressInfo: function (nu, cb) {
-    var apikey= "";
+  getExpressInfo: function (nu, type, cb) {
+    var apikey = "";
     var jsonData = {
       'LogisticCode': nu,
-      'ShipperCode': 'ZTO'
+      'ShipperCode': type
     }
-  
+
+    var sign = JSON.stringify(jsonData) + apikey;
+    console.log(sign)
+
+    var DataSign = Base64.encode(MD5.hexMD5(sign));
     var RequestData = escape(JSON.stringify(jsonData));
-    console.log(JSON.stringify(jsonData));
-    console.log(RequestData);
 
     wx.request({
       url: "https://api.kdniao.cc/Ebusiness/EbusinessOrderHandle.aspx",
@@ -57,14 +61,13 @@ App({
         'EBusinessID': '1321315',
         'RequestData': RequestData,
         'RequestType': '1002',
-        'DataSign': "YTQxMGYxYzc4NDc2Y2JkMzMyNjg2YWU4MzdhMmIwZWU=",
+        'DataSign': DataSign,
         'DataType': '2'
       },
       header: {
 
       },
       success: function (res) {
-        //console.log(res.data)
         cb(res.data)
       }
     })

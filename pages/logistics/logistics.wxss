@@ -3,5 +3,22 @@ input{
   border: 2px solid red;
   width: 60%;
   margin: 5%;
-  padding: 5px
+  padding: 5px;
+}
+.info{
+  width: 100%;
+  background-color: #FCFCFC;
+  margin-top: 50px;
+  border: 2px solid black;
+  padding: 5px;
+}
+
+.btn-query{
+  margin-top: 10px;
+}
+
+.spider{
+  background-color: #FCFCFC;
+  border: 1px solid black;
+  padding: 5px;
 }

@@ -6,22 +6,105 @@ Page({
    */
   data: {
     expressNu: null,
-    expressInfo: null
+    expressInfo: null,
+    reason: '',
+    expressType: 0,
+    inputvalue:'',
+    array: ['顺丰', '百世', '中通', '申通', '圆通', '韵达', '邮政', 'EMS', '天天', '京东', '国通', '优速', '德邦', '申通', '快捷', '宅急送'],
+    index: 0
   },
 
   queryClick: function () {
     var thispage = this;
-    app.getExpressInfo(this.data.expressNu, function (data) {
-      thispage.setData({ expressInfo: data})
+    app.getExpressInfo(this.data.expressNu, this.data.expressType, function (data) {
+      console.log(data.Traces == '')
+      if (data.Success != false && data.Traces != '') {
+        thispage.setData({ reason: '' });
+        thispage.setData({ expressInfo: data });
+      } else if (data.Success == true && data.Traces == '') {
+        thispage.setData({ reason: data.Reason });
+      } else {
+        thispage.setData({ reason: "请输入订单号！" });
+      }
       console.log(data)
     })
   },
 
   input: function (data) {
     this.setData({ expressNu: data.detail.value });
-    console.log(data);
   },
 
+  bindPickerChange: function (e) {
+    var type = e.detail.value;
+    switch (type) {
+      case '0':
+        console.log('顺丰');
+        this.setData({ expressType: 'SF' });
+        break;
+      case '1':
+        console.log('百世');
+        this.setData({ expressType: 'HTKY' });
+        break;
+      case '2':
+        console.log('中通');
+        this.setData({ expressType: 'ZTO' });
+        break;
+      case '3':
+        console.log('申通');
+        this.setData({ expressType: 'STO' });
+        break;
+      case '4':
+        console.log('圆通');
+        this.setData({ expressType: 'YTO' });
+        break;
+      case '5':
+        console.log('韵达');
+        this.setData({ expressType: 'YD' });
+        break;
+      case '6':
+        console.log('邮政');
+        this.setData({ expressType: 'YZPY' });
+        break;
+      case '7':
+        console.log('EMS');
+        this.setData({ expressType: 'EMS' });
+        break;
+      case '8':
+        console.log('天天');
+        this.setData({ expressType: 'HHTT' });
+        break;
+      case '9':
+        console.log('京东');
+        this.setData({ expressType: 'JD' });
+        break;
+      case '10':
+        console.log('全峰');
+        this.setData({ expressType: 'QFKD' });
+        break;
+      case '11':
+        console.log('国通');
+        this.setData({ expressType: 'GTO' });
+        break;
+      case '12':
+        console.log('优速');
+        this.setData({ expressType: 'UC' });
+        break;
+      case '13':
+        console.log('德邦');
+        this.setData({ expressType: 'DBL' });
+        break;
+      case '14':
+        console.log('快捷');
+        this.setData({ expressType: 'FAST' });
+        break;
+      case '15':
+        console.log('宅急送');
+        this.setData({ expressType: 'ZJS' });
+        break;
+    }
+    console.log('picker发送选择改变，携带值为', e.detail.value);
+    this.setData({ index: e.detail.value })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
