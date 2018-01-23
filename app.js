@@ -1,8 +1,13 @@
 //app.js author:丢失的橘子
-const api_key = require('utils/config.js').logistics_key;
-const api_url = require('utils/config.js').logistics_address;
+var logistics_key = require('utils/config.js').logistics_key;
+var logistics_address = require('utils/config.js').logistics_address;
+var EBusinessID = require('utils/config.js').EBusinessID;
+var showapi_appid = require('utils/config.js').showapi_appid;
+var showapi_sign = require('utils/config.js').showapi_sign;
+var api_url = require('utils/config.js').logistics_address;
 var Base64 = require('utils/base64.modified.js');
 var MD5 = require('/utils/md5.js')
+
 App({
   onLaunch: function () {
     // 展示本地存储能力
@@ -42,23 +47,21 @@ App({
     userInfo: null
   },
 
+  //物流查询
   getExpressInfo: function (nu, type, cb) {
-    var apikey = "";
+    var apikey = logistics_key;
     var jsonData = {
       'LogisticCode': nu,
       'ShipperCode': type
     }
-
     var sign = JSON.stringify(jsonData) + apikey;
-    console.log(sign)
-
     var DataSign = Base64.encode(MD5.hexMD5(sign));
     var RequestData = escape(JSON.stringify(jsonData));
 
     wx.request({
-      url: "https://api.kdniao.cc/Ebusiness/EbusinessOrderHandle.aspx",
+      url: logistics_address,
       data: {
-        'EBusinessID': '1321315',
+        'EBusinessID': EBusinessID,
         'RequestData': RequestData,
         'RequestType': '1002',
         'DataSign': DataSign,
@@ -69,6 +72,24 @@ App({
       },
       success: function (res) {
         cb(res.data)
+      }
+    })
+  },
+
+  getConstInfo: function () {
+    wx.request({
+      url: "http://route.showapi.com/872-1",
+      data: {
+        'showapi_appid': showapi_appid,
+        'showapi_sign': showapi_sign,
+        'star': 'shizi'
+      },
+      header: {
+
+      },
+      success: function (res) {
+        console.log(res);
+        //cb(res.data)
       }
     })
   }

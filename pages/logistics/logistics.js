@@ -9,7 +9,7 @@ Page({
     expressInfo: null,
     reason: '',
     expressType: 0,
-    inputvalue:'',
+    inputValue: '',
     array: ['顺丰', '百世', '中通', '申通', '圆通', '韵达', '邮政', 'EMS', '天天', '京东', '国通', '优速', '德邦', '申通', '快捷', '宅急送'],
     index: 0
   },
@@ -28,6 +28,10 @@ Page({
       }
       console.log(data)
     })
+  },
+
+  clearClick: function () {
+    this.setData({ inputValue: '' });
   },
 
   input: function (data) {

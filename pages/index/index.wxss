@@ -1,21 +1,39 @@
-/**index.wxss**/
-.userinfo {
+/* pages/calculator/calculator.wxss */
+
+.back {
+  background-image: url('../../img/index/backgroud.jpg');
+  display: block;
+  min-height: 100%;
+  background-color: red;
+}
+
+.backgroup {
+  height: 500px;
+  background-size: 100%;
+}
+
+.font_style {
+  width: 100%;
+  height: 100%;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+.top1 {
+  height: 200rpx;
+  width: 48.5%;
+  background-color: orange;
+  border: 1px solid bisque;
+  border-radius: 5px;
+  box-shadow: 3px 3px 1px #888;
 }
-
-.userinfo-nickname {
-  color: #aaa;
-}
-
-.usermotto {
-  margin-top: 200px;
+.top2 {
+  height: 200rpx;
+  width: 48.5%;
+  background-color: orange;
+  border: 1px solid bisque;
+  border-radius: 5px;
+  box-shadow: 3px 3px 1px #888;
+  margin-left: 3px
 }

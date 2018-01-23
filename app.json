@@ -1,15 +1,38 @@
 {
-  "pages":[
-    "pages/calculator/calculator",
+  "pages": [
     "pages/index/index",
+    "pages/calculator/calculator",
     "pages/logs/logs",
     "pages/demo/demo",
-    "pages/logistics/logistics"
+    "pages/logistics/logistics",
+    "pages/about/about",
+    "pages/constellation/constellation"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "猫咪工具箱",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "white",
+    "navigationBarBackgroundColor": "#FFD700"
+  },
+  "tabBar": {
+    "color": "#a9b7b7",
+    "selectedColor": "#11cd6e",
+    "borderStyle": "black",
+    "backgroundColor":"#EAEAEA",
+    "list": [
+      {
+        "selectedIconPath": "img/icon/index_fill.png",
+        "iconPath": "img/icon/index.png",
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "selectedIconPath": "img/icon/help_fill.png",
+        "iconPath": "img/icon/help.png",
+        "pagePath": "pages/about/about",
+        "text": "关于"
+      }
+    ]
   }
 }

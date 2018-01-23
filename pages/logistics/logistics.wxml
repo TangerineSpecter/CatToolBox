@@ -1,19 +1,28 @@
 <!--pages/logistics/logistics.wxml-->
-<view class='container'>
-  <input placeholder="请输入物流单号" bindinput='input' value="{{inputvalue}}"/>
+<view class='container' style='overflow:hidden'>
+  <input placeholder="请输入物流单号" bindinput='input' value="{{inputValue}}" />
   <view class="section">
     <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
       <view class="picker">
-        选择快递：
-        <text class='spider'>{{array[index]}}</text>
+
+        <text class='spider'>选择快递：{{array[index]}}</text>
       </view>
     </picker>
   </view>
   <button class='btn-query' type='primary' bindtap="queryClick">查询</button>
+  <button class='btn-clear' type='primary' bindtap="clearClick">清空</button>
   <scroll-view class='info' scroll-y="true" style="height:210px;">
     <text>{{reason}}</text>
     <view wx:for="{{expressInfo.Traces}}" wx:key="key">
-      <text>{{item.AcceptStation}}</text>
+      <view>
+        <text style='font-size: 30rpx'>{{item.AcceptStation}}</text>
+      </view>
+      <view>
+        <text style='font-size: 20rpx'>{{item.AcceptTime}}</text>
+      </view>
+      <view>
+        ----------------------------------------------
+      </view>
     </view>
   </scroll-view>
 </view>

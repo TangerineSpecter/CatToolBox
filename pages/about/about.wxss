@@ -1,0 +1,12 @@
+.version {
+  width: 60%;
+  background-color: #fcfcfc;
+  margin-top: 50px;
+  border: 2px solid black;
+  padding: 3px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: x-large;
+  display: flex;
+  justify-content: center;
+}

@@ -8,20 +8,11 @@ Page({
   },
 
   /**
-   * 物流查询页面
+   * 演示页面
    */
-  logisticsClick: function () {
+  testClick: function () {
     wx.navigateTo({
-      url: '../logistics/logistics'
-    })
-  },
-
-  /**
-   * 星座运势页面
-   */
-  constellationClick: function () {
-    wx.navigateTo({
-      url: '../constellation/constellation',
+      url: '../demo/demo'
     })
   },
 
@@ -29,28 +20,28 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log("页面加载完成了");
+
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    console.log("页面渲染完成了");
+
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    console.log("页面显示了");
+
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-    console.log("页面隐藏了");
+
   },
 
   /**
@@ -71,13 +62,13 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    console.log("向上拉动了");
+
   },
 
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-    console.log("点击了分享");
+
   }
 })

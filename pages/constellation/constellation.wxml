@@ -1,0 +1,2 @@
+<text>星座运势⭐⭐⭐⭐⭐</text>
+<button bindtap='queryClick'>查询</button>

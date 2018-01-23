@@ -1,24 +1,46 @@
 /* pages/logistics/logistics.wxss */
-input{
-  border: 2px solid red;
+
+/** 输入框样式 */
+
+input {
+  border: 2px solid orange;
   width: 60%;
   margin: 5%;
   padding: 5px;
+  box-shadow: 3px 3px 1px #888;
 }
-.info{
+
+/** 物流信息框样式 */
+
+.info {
   width: 100%;
-  background-color: #FCFCFC;
+  background-color: #fcfcfc;
   margin-top: 50px;
   border: 2px solid black;
   padding: 5px;
 }
 
-.btn-query{
+/** 查询按钮样式 */
+
+.btn-query {
   margin-top: 10px;
+  margin-left: 130px;
+  box-shadow: 2px 2px 1px #888;
 }
 
-.spider{
-  background-color: #FCFCFC;
+/** 清空按钮样式 */
+
+.btn-clear {
+  margin-top: -46px;
+  margin-right: 130px;
+  box-shadow: 2px 2px 1px #888;
+}
+
+/** 物流下拉框样式 */
+
+.spider {
+  background-color: #fcfcfc;
   border: 1px solid black;
   padding: 5px;
+  border-radius: 5px;
 }

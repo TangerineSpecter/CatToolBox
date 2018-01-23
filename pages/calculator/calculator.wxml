@@ -3,5 +3,5 @@
   <!--<button type="default" bindtap="testClick">{{btn_test}}</button>-->
 </view>
 <view class='version'>
-  猫咪工具箱v0.1
+  <text>猫咪工具箱v0.1</text>
 </view>
