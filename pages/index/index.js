@@ -26,6 +26,16 @@ Page({
   },
 
   /**
+   * 提示弹窗
+   */
+  infoClick: function () {
+    wx.showToast({
+      title: '敬请期待',
+      duration: 2000
+    })
+  },
+
+  /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {

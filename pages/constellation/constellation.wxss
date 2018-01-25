@@ -1,0 +1,38 @@
+/**字体样式 **/
+
+.font_info {
+  width: 75%;
+  background-color: #fcfcfc;
+  margin-top: 50px;
+  border: 2px solid black;
+  padding: 3px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: x-large;
+  display: flex;
+  justify-content: center;
+}
+
+/**图片样式 **/
+
+.image_window {
+  height: 800rpx;
+  width: 80%;
+  background-color: orange;
+  border: 1px solid bisque;
+  border-radius: 5px;
+  box-shadow: 5px 5px 2px #888;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+}
+
+/**按钮样式 **/
+.button_commit {
+  position:fixed; 
+  left:0px; 
+  bottom:0px; 
+  width:100%; 
+  height:50px; 
+  z-index:9999;
+}

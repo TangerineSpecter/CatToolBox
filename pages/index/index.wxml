@@ -2,3 +2,5 @@
 </image>
 <image src='../../img/index/2.jpg' class='top2'bindtap="constellationClick">
 </image>
+<image src='../../img/index/3.jpg' class='top3'bindtap="infoClick">
+</image>

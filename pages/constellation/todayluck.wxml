@@ -1,0 +1,66 @@
+<view>
+  <text class='center' style='font-size: xx-large'>{{info}}今日运势</text>
+</view>
+<view>
+  <text class='center' style='font-size: x-large;'>-----------------------------</text>
+</view>
+<view class='mode_page'>
+  <view>
+    <text style='font-weight:bold;'>综合指数：</text>
+    <text>{{summary_star}}</text>
+  </view>
+  <view>
+    <text style='font-weight:bold;'>爱情指数：</text>
+    <text>{{love_star}}</text>
+  </view>
+  <view>
+    <text style='font-weight:bold;'>财富指数：</text>
+    <text>{{money_star}}</text>
+  </view>
+  <view>
+    <text style='font-weight:bold;'>工作指数：</text>
+    <text>{{work_star}}</text>
+  </view>
+  <view>
+    <text style='font-weight:bold;'>今日提醒：</text>
+    <text>{{day_notice}}</text>
+  </view>
+</view>
+<view class='mode_page'>
+  <text style='font-weight:bold;'>运势简评：</text>
+  <text>{{general_txt}}</text>
+</view>
+<view class='mode_page'>
+  <text style='font-weight:bold;'>爱情运势：</text>
+  <text>{{love_txt}}</text>
+</view>
+<view class='mode_page'>
+  <text style='font-weight:bold;'>工作运势：</text>
+  <text>{{work_txt}}</text>
+</view>
+<view class='mode_page'>
+  <text style='font-weight:bold;'>财富运势：：</text>
+  <text>{{money_txt}}</text>
+</view>
+<view class='mode_page'>
+  <view>
+    <text style='font-weight:bold;'>吉时：</text>
+    <text>{{lucky_time}}</text>
+  </view>
+  <view>
+    <text style='font-weight:bold;'>吉色：</text>
+    <text>{{lucky_color}}</text>
+  </view>
+  <view>
+    <text style='font-weight:bold;'>吉利方位：</text>
+    <text>{{lucky_direction}}</text>
+  </view>
+  <view>
+    <text style='font-weight:bold;'>幸运数字：</text>
+    <text>{{lucky_num}}</text>
+  </view>
+</view>
+<view class='mode_page'>
+  <text style='font-weight:bold;'>贵人星座：</text>
+  <text>{{grxz}}</text>
+</view>

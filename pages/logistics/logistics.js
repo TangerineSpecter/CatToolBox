@@ -106,14 +106,15 @@ Page({
         this.setData({ expressType: 'ZJS' });
         break;
     }
-    console.log('picker发送选择改变，携带值为', e.detail.value);
     this.setData({ index: e.detail.value })
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    wx.setNavigationBarTitle({
+      title: '物流查询'
+    })
   },
 
   /**

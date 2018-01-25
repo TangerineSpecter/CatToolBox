@@ -6,7 +6,8 @@
     "pages/demo/demo",
     "pages/logistics/logistics",
     "pages/about/about",
-    "pages/constellation/constellation"
+    "pages/constellation/constellation",
+    "pages/constellation/todayluck"
   ],
   "window": {
     "backgroundTextStyle": "light",

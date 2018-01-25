@@ -2,9 +2,12 @@
 var logistics_key = require('utils/config.js').logistics_key;
 var logistics_address = require('utils/config.js').logistics_address;
 var EBusinessID = require('utils/config.js').EBusinessID;
+var api_url = require('utils/config.js').logistics_address;
+
 var showapi_appid = require('utils/config.js').showapi_appid;
 var showapi_sign = require('utils/config.js').showapi_sign;
-var api_url = require('utils/config.js').logistics_address;
+var const_url = require('utils/config.js').const_url;
+
 var Base64 = require('utils/base64.modified.js');
 var MD5 = require('/utils/md5.js')
 
@@ -76,20 +79,21 @@ App({
     })
   },
 
-  getConstInfo: function () {
+  //星座查询
+  getConstInfo: function (star,cb) {
     wx.request({
-      url: "http://route.showapi.com/872-1",
+      url: const_url,
       data: {
         'showapi_appid': showapi_appid,
         'showapi_sign': showapi_sign,
-        'star': 'shizi'
+        'star': star
       },
       header: {
 
       },
       success: function (res) {
-        console.log(res);
-        //cb(res.data)
+        //console.log(res);
+        cb(res.data)
       }
     })
   }
