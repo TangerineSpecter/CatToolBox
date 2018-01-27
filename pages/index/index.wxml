@@ -1,6 +1,18 @@
-<image src='../../img/index/1.jpg' class='top1' bindtap="logisticsClick">
-</image>
-<image src='../../img/index/2.jpg' class='top2'bindtap="constellationClick">
-</image>
-<image src='../../img/index/3.jpg' class='top3'bindtap="infoClick">
-</image>
+<view>
+  <image src='../../img/index/1.jpg' class='top1' bindtap="logisticsClick">
+  </image>
+  <image src='../../img/index/2.jpg' class='top2' bindtap="constellationClick">
+  </image>
+</view>
+<view>
+  <image src='../../img/index/3.jpg' class='top3' bindtap="jokeClick">
+  </image>
+  <image src='../../img/index/4.jpg' class='top4' bindtap="infoClick">
+  </image>
+</view>
+<view>
+  <image src='../../img/index/5.jpg' class='top5' bindtap="infoClick">
+  </image>
+  <image src='../../img/index/6.jpg' class='top6' bindtap="infoClick">
+  </image>
+</view>

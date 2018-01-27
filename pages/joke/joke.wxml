@@ -1,0 +1,7 @@
+<view class='center mode_page'>
+  <text>{{title}}</text>
+</view>
+<view class='mode_page'>
+  <text>{{joke}}</text>
+</view>
+<button bindtap='randomClick'>点击</button>

@@ -2,9 +2,9 @@
   <image src='{{imageInfo}}' style='width:100%;height:100%'></image>
 </view>
 <view class="section section_gap">
-  <text class="font_info">{{info}}</text>
   <view class="body-view">
-    <slider bindchange="sliderChange" step="1" min='1' max='12' />
+    <slider bindchange="sliderChange" step="1" min='1' max='12' style='margin-top:40rpx'/>
   </view>
+  <text class="font_info">{{info}}</text>
 </view>
 <button bindtap='jump' class='button_commit'>确定</button>

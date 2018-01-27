@@ -2,7 +2,7 @@
   <text class='center' style='font-size: xx-large'>{{info}}今日运势</text>
 </view>
 <view>
-  <text class='center' style='font-size: x-large;'>-----------------------------</text>
+  <text class='center' style='font-size: x-large;'>---------------------</text>
 </view>
 <view class='mode_page'>
   <view>
@@ -60,7 +60,7 @@
     <text>{{lucky_num}}</text>
   </view>
 </view>
-<view class='mode_page'>
+<view class='mode_page' style='margin-bottom: 15px'>
   <text style='font-weight:bold;'>贵人星座：</text>
   <text>{{grxz}}</text>
 </view>

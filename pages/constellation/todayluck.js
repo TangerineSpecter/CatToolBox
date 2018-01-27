@@ -55,7 +55,7 @@ Page({
       thisPage.setData({ time: today.time });
       thisPage.setData({ lucky_color: today.lucky_color });
       thisPage.setData({ general_txt: today.general_txt });
-    })
+    });
   },
 
   /**

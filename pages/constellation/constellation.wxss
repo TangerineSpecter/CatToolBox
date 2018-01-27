@@ -1,11 +1,11 @@
 /**字体样式 **/
 
 .font_info {
-  width: 75%;
+  width: 80%;
   background-color: #fcfcfc;
-  margin-top: 50px;
-  border: 2px solid black;
-  padding: 3px;
+  margin-top: 40rpx;
+  border: 6rpx solid black;
+  padding: 6rpx;
   margin-left: auto;
   margin-right: auto;
   font-size: x-large;

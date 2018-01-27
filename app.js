@@ -1,13 +1,5 @@
 //app.js author:丢失的橘子
-var logistics_key = require('utils/config.js').logistics_key;
-var logistics_address = require('utils/config.js').logistics_address;
-var EBusinessID = require('utils/config.js').EBusinessID;
-var api_url = require('utils/config.js').logistics_address;
-
-var showapi_appid = require('utils/config.js').showapi_appid;
-var showapi_sign = require('utils/config.js').showapi_sign;
-var const_url = require('utils/config.js').const_url;
-
+var config = require('utils/config.js');
 var Base64 = require('utils/base64.modified.js');
 var MD5 = require('/utils/md5.js')
 
@@ -52,7 +44,7 @@ App({
 
   //物流查询
   getExpressInfo: function (nu, type, cb) {
-    var apikey = logistics_key;
+    var apikey = config.logistics_key;
     var jsonData = {
       'LogisticCode': nu,
       'ShipperCode': type
@@ -62,9 +54,9 @@ App({
     var RequestData = escape(JSON.stringify(jsonData));
 
     wx.request({
-      url: logistics_address,
+      url: config.logistics_address,
       data: {
-        'EBusinessID': EBusinessID,
+        'EBusinessID': config.EBusinessID,
         'RequestData': RequestData,
         'RequestType': '1002',
         'DataSign': DataSign,
@@ -80,12 +72,12 @@ App({
   },
 
   //星座查询
-  getConstInfo: function (star,cb) {
+  getConstInfo: function (star, cb) {
     wx.request({
-      url: const_url,
+      url: config.const_url,
       data: {
-        'showapi_appid': showapi_appid,
-        'showapi_sign': showapi_sign,
+        'showapi_appid': config.showapi_appid,
+        'showapi_sign': config.showapi_sign,
         'star': star
       },
       header: {
@@ -93,6 +85,27 @@ App({
       },
       success: function (res) {
         //console.log(res);
+        cb(res.data)
+      }
+    })
+  },
+
+  //笑话查询
+  geJokeInfo: function (page, cb) {
+    var pageSize = 1;
+    wx.request({
+      url: config.joke_url,
+      data: {
+        'showapi_appid': config.showapi_appid,
+        'showapi_sign': config.showapi_sign,
+        'page': page,
+        'maxResult': pageSize
+      },
+      header: {
+
+      },
+      success: function (res) {
+        console.log(res);
         cb(res.data)
       }
     })

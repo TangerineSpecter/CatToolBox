@@ -1,4 +1,6 @@
-<image src='../../img/about/header.jpg' style='width:100%;height:500px'></image>
+<view>
+  <image src='../../img/about/header.jpg' style='width:100%;height:800rpx'></image>
+</view>
 <view class='version' bindlongtap='testClick'>
   猫咪工具箱v{{version}}
 </view>

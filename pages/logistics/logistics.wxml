@@ -11,7 +11,7 @@
   </view>
   <button class='btn-query' type='primary' bindtap="queryClick">查询</button>
   <button class='btn-clear' type='primary' bindtap="clearClick">清空</button>
-  <scroll-view class='info' scroll-y="true" style="height:210px;">
+  <scroll-view class='info' scroll-y="true" style="height:590rpx;">
     <text>{{reason}}</text>
     <view wx:for="{{expressInfo.Traces}}" wx:key="key">
       <view>
