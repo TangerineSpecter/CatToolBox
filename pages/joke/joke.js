@@ -9,7 +9,8 @@ Page({
     joke: '',
     title: '',
     page: 1,
-    loading: false
+    loading: false,
+    currentPage: 0
   },
 
   randomClick: function () {
@@ -17,9 +18,14 @@ Page({
     var thisPage = this;
     thisPage.setData({ loading: false });
     app.getJokeInfo(page, function (data) {
-      thisPage.setData({ title: data.showapi_res_body.contentlist[0].title });
-      thisPage.setData({ joke: data.showapi_res_body.contentlist[0].text });
-      thisPage.setData({ loading: true });
+      if (data.showapi_res_code == 0) {
+        thisPage.setData({ title: data.showapi_res_body.contentlist[0].title });
+        thisPage.setData({ joke: data.showapi_res_body.contentlist[0].text });
+        thisPage.setData({ currentPage: data.showapi_res_body.currentPage });
+        thisPage.setData({ loading: true });
+      } else {
+        thisPage.randomClick();
+      }
     });
   },
 
@@ -33,10 +39,15 @@ Page({
       title: '笑话大全'
     })
     app.getJokeInfo(page, function (data) {
-      thisPage.setData({ title: data.showapi_res_body.contentlist[0].title });
-      thisPage.setData({ joke: data.showapi_res_body.contentlist[0].text });
-      thisPage.setData({ page: data.showapi_res_body.allPages });
-      thisPage.setData({ loading: true });
+      if (data.showapi_res_code == 0) {
+        thisPage.setData({ title: data.showapi_res_body.contentlist[0].title });
+        thisPage.setData({ joke: data.showapi_res_body.contentlist[0].text });
+        thisPage.setData({ page: data.showapi_res_body.allPages });
+        thisPage.setData({ currentPage: data.showapi_res_body.currentPage });
+        thisPage.setData({ loading: true });
+      } else {
+        thisPage.randomClick();
+      }
     });
   },
 

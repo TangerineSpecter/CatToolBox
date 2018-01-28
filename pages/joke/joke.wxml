@@ -1,10 +1,19 @@
-<view class='center mode_page'>
-  <text>{{title}}</text>
-</view>
-<view class='mode_page'>
-  <text>{{joke}}</text>
-</view>
-<view>
-<loading hidden="{{loading}}">正在加载</loading>
-<button class='mode_btn' bindtap='randomClick' type='warn'>换一条</button>
+<view class="page">
+  <view class="page__hd">
+    <view class="page__title">{{title}}</view>
+    <view class="page__desc">第{{currentPage}}话</view>
+  </view>
+  <loading hidden="{{loading}}">正在加载</loading>
+  <view class="page__bd">
+    <view class="weui-article">
+      <view class="weui-article__section">
+        <view class="weui-article__section">
+          <view class="weui-article__p">{{joke}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view>
+    <button class='mode_btn' bindtap='randomClick' type='warn'>换一条</button>
+  </view>
 </view>

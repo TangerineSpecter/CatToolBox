@@ -20,3 +20,10 @@
   font-size: large;
 }
 
+.page_line {
+  width: 60%;
+  height: 0;
+  border-bottom: #000 4rpx dashed;
+  margin-left: auto;
+  margin-right: auto;
+}

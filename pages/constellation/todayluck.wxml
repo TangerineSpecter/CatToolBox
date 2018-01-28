@@ -2,7 +2,7 @@
   <text class='center' style='font-size: xx-large'>{{info}}今日运势</text>
 </view>
 <view>
-  <text class='center' style='font-size: x-large;'>---------------------</text>
+  <view class='page_line'></view>
 </view>
 <view class='mode_page'>
   <view>
