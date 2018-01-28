@@ -9,7 +9,8 @@
     "pages/constellation/todayluck",
     "pages/joke/joke",
     "pages/robot/robot",
-    "pages/words/words"
+    "pages/words/words",
+    "pages/history/history"
   ],
   "window": {
     "backgroundTextStyle": "light",

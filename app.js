@@ -9,10 +9,10 @@ App({
   onLaunch: function () {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
+    //logs.unshift(Date.now())
+    //wx.setStorageSync('logs', logs)
+    console.log('工具箱启动');
 
-    console.log("工具箱启动成功...")
     // 登录
     wx.login({
       success: res => {
@@ -123,6 +123,25 @@ App({
         'showapi_sign': config.showapi_sign,
         'info': info,
         'userid': 'userid'
+      },
+      header: {
+
+      },
+      success: function (res) {
+        //console.log(res);
+        cb(res.data)
+      }
+    })
+  },
+
+  //历史上的今天
+  getHistoryInfo: function (cb) {
+    var pageSize = 1;
+    wx.request({
+      url: config.history_url,
+      data: {
+        'showapi_appid': config.showapi_appid,
+        'showapi_sign': config.showapi_sign
       },
       header: {
 

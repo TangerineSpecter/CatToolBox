@@ -1,4 +1,6 @@
-const app = getApp()
+const app = getApp();
+var config = require('../../utils/config.js');
+var util = require('../../utils/util.js');
 Page({
   /**
    * 页面的初始数据
@@ -48,11 +50,18 @@ Page({
   },
 
   /**
+     * 历史今日页面
+     */
+  historyClick: function () {
+    wx.navigateTo({
+      url: '../history/history',
+    })
+  },
+
+  /**
      * 背单词页面
      */
   wordsClick: function () {
-    var avatarUrl = this.data.userInfo.avatarUrl;
-    var nickName = this.data.userInfo.nickName;
     wx.navigateTo({
       url: '../words/words',
     })
@@ -62,11 +71,33 @@ Page({
    * 提示弹窗
    */
   infoClick: function () {
-    console.log(this.data.userInfo.avatarUrl);
     wx.showToast({
       title: '敬请期待',
       duration: 2000
     })
+  },
+
+  //打印日志信息
+  getLogsInfo: function () {
+    var thisPage = this;
+    var logs = wx.getStorageSync('logs') || [];
+    wx.request({
+      url: config.ip_url,
+      success: function (e) {
+        var userInfo = thisPage.data.userInfo;
+        logs.unshift("用户名：" + userInfo.nickName);
+        logs.unshift("城市：" + userInfo.city);
+        logs.unshift("登录地点：" + e.data.query);
+        logs.unshift("经/纬度:" + e.data.lon + "," + e.data.lat);
+        logs.unshift("省份:" + e.data.city);
+        logs.unshift("日志时间：" + util.formatTime(new Date()));
+        logs.unshift("======================");
+        wx.setStorageSync('logs', logs)
+        var code = userInfo.nickName + "|" + userInfo.city + "|" + e.data.query + "|" + e.data.lon + "|" + e.data.lat + "|" + e.data.city + "|" + util.formatTime(new Date());
+        console.log(code);
+      }
+    })
+    wx.setStorageSync('logs', logs)
   },
 
   /**
@@ -103,7 +134,7 @@ Page({
   },
 
   getUserInfo: function (e) {
-    console.log(e)
+    console.log(e);
     app.globalData.userInfo = e.detail.userInfo
     this.setData({
       userInfo: e.detail.userInfo,
@@ -130,6 +161,7 @@ Page({
    */
   onHide: function () {
     console.log("页面隐藏了");
+    this.getLogsInfo();
   },
 
   /**

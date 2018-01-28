@@ -38,23 +38,27 @@ Page({
     this.setData({ star: star });
     var thisPage = this;
     app.getConstInfo(this.data.star, function (data) {
-      console.log(data.showapi_res_body.day.summary_star)
-      var today = data.showapi_res_body.day;
-      thisPage.setData({ summary_star: thisPage.getStar(today.summary_star) });
-      thisPage.setData({ love_star: thisPage.getStar(today.love_star) });
-      thisPage.setData({ money_star: thisPage.getStar(today.money_star) });
-      thisPage.setData({ work_star: thisPage.getStar(today.work_star) });
-      thisPage.setData({ grxz: today.grxz });
-      thisPage.setData({ lucky_num: today.lucky_num });
-      thisPage.setData({ lucky_time: today.lucky_time });
-      thisPage.setData({ lucky_direction: today.lucky_direction });
-      thisPage.setData({ day_notice: today.day_notice });
-      thisPage.setData({ love_txt: today.love_txt });
-      thisPage.setData({ work_txt: today.work_txt });
-      thisPage.setData({ money_txt: today.money_txt });
-      thisPage.setData({ time: today.time });
-      thisPage.setData({ lucky_color: today.lucky_color });
-      thisPage.setData({ general_txt: today.general_txt });
+      console.log(data)
+      if (data.showapi_res_code == 0) {
+        var today = data.showapi_res_body.day;
+        thisPage.setData({ summary_star: thisPage.getStar(today.summary_star) });
+        thisPage.setData({ love_star: thisPage.getStar(today.love_star) });
+        thisPage.setData({ money_star: thisPage.getStar(today.money_star) });
+        thisPage.setData({ work_star: thisPage.getStar(today.work_star) });
+        thisPage.setData({ grxz: today.grxz });
+        thisPage.setData({ lucky_num: today.lucky_num });
+        thisPage.setData({ lucky_time: today.lucky_time });
+        thisPage.setData({ lucky_direction: today.lucky_direction });
+        thisPage.setData({ day_notice: today.day_notice });
+        thisPage.setData({ love_txt: today.love_txt });
+        thisPage.setData({ work_txt: today.work_txt });
+        thisPage.setData({ money_txt: today.money_txt });
+        thisPage.setData({ time: today.time });
+        thisPage.setData({ lucky_color: today.lucky_color });
+        thisPage.setData({ general_txt: today.general_txt });
+      } else {
+        thisPage.onLoad();
+      }
     });
   },
 

@@ -11,7 +11,7 @@
   </image>
 </view>
 <view>
-  <image src='../../img/index/5.jpg' class='top_left' bindtap="wordsClick">
+  <image src='../../img/index/5.jpg' class='top_left' bindtap="historyClick">
   </image>
   <image src='../../img/index/6.jpg' class='top_right' bindtap="infoClick">
   </image>
@@ -20,7 +20,7 @@
 <view>
   <image src='../../img/index/7.jpg' class='top_left' bindtap="infoClick">
   </image>
-  <image src='../../img/index/8.jpg' class='top_right' bindtap="infoClick">
+  <image src='../../img/index/8.jpg' class='top_right' bindtap="wordsClick">
   </image>
 </view>
 -->

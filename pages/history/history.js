@@ -1,30 +1,36 @@
-var count = 0;
+var app = getApp();
+var util = require('../../utils/util.js');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    version: '0.5.0'
-  },
-
-  /**
-   * 演示页面
-   */
-  testClick: function () {
-    count++;
-    if (count % 10 == 0) {
-      wx.navigateTo({
-        url: '../logs/logs'
-      });
-    }
+    loading: false,
+    time: '',
+    historyList: ''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var time = util.formatDay(new Date());
+    this.setData({ time: time });
+    var thisPage = this;
+    wx.setNavigationBarTitle({
+      title: '历史上的今天'
+    })
+    app.getHistoryInfo(function (data) {
+      if (data.showapi_res_code == 0) {
+        //console.log(data)
+        thisPage.setData({historyList:data.showapi_res_body.list});
+        console.log(thisPage.data.historyList);
+        thisPage.setData({ loading: true });
+      } else {
+        thisPage.onLoad();
+      }
+    });
   },
 
   /**
