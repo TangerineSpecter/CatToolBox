@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    version: '0.3.5'
+    version: '0.4.3'
   },
 
   /**
@@ -15,7 +15,7 @@ Page({
     count++;
     if (count % 10 == 0) {
       wx.navigateTo({
-        url: '../demo/demo'
+        url: '../logs/logs'
       });
     }
   },

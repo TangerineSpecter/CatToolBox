@@ -87,6 +87,9 @@ Page({
   onLoad: function (options) {
     this.setData({ avatarUrl: options.avatarUrl });
     this.setData({ nickName: options.nickName });
+    wx.setNavigationBarTitle({
+      title: '小黄猫聊天'
+    })
   },
 
   /**

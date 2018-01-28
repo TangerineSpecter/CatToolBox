@@ -1,4 +1,6 @@
-//app.js author:丢失的橘子
+//app.js 
+//author:丢失的橘子
+//github:https://github.com/TangerineSpecter/CatToolBox
 var config = require('utils/config.js');
 var Base64 = require('utils/base64.modified.js');
 var MD5 = require('/utils/md5.js')

@@ -4,4 +4,7 @@
 <view class='mode_page'>
   <text>{{joke}}</text>
 </view>
-<button bindtap='randomClick'>点击</button>
+<view>
+<loading hidden="{{loading}}">正在加载</loading>
+<button class='mode_btn' bindtap='randomClick' type='warn'>换一条</button>
+</view>

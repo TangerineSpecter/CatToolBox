@@ -1,10 +1,10 @@
-/**模块样式 **/
 /** 居中样式 **/
 
 .center {
   justify-content: center;
   display: flex;
 }
+
 .mode_page {
   width: 80%;
   background-color: #fcfcfc;
@@ -14,4 +14,12 @@
   margin-left: auto;
   margin-right: auto;
   font-size: large;
+}
+
+/** 按钮样式 */
+
+.mode_btn {
+  margin-top: 10px;
+  width: 50%;
+  box-shadow: 2px 2px 1px #888;
 }

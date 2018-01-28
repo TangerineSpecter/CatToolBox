@@ -1,7 +1,0 @@
-<view class="backgroup" style="background-image: url('../../img/index/backgroud.jpg');">
-  <button type="default" bindtap="logisticsClick">{{btn_logistics}}</button>
-  <!--<button type="default" bindtap="testClick">{{btn_test}}</button>-->
-</view>
-<view class='version'>
-  <text>猫咪工具箱v0.1</text>
-</view>

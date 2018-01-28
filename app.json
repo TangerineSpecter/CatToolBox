@@ -1,7 +1,6 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/calculator/calculator",
     "pages/logs/logs",
     "pages/demo/demo",
     "pages/logistics/logistics",
@@ -9,20 +8,20 @@
     "pages/constellation/constellation",
     "pages/constellation/todayluck",
     "pages/joke/joke",
-    "pages/robot/robot"
+    "pages/robot/robot",
+    "pages/words/words"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#FFD700",
     "navigationBarTitleText": "猫咪工具箱",
-    "navigationBarTextStyle": "white",
-    "navigationBarBackgroundColor": "#FFD700"
+    "navigationBarTextStyle": "white"
   },
   "tabBar": {
     "color": "#a9b7b7",
     "selectedColor": "#11cd6e",
     "borderStyle": "black",
-    "backgroundColor":"#EAEAEA",
+    "backgroundColor": "#EAEAEA",
     "list": [
       {
         "selectedIconPath": "img/icon/index_fill.png",

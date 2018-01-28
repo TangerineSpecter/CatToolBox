@@ -48,6 +48,17 @@ Page({
   },
 
   /**
+     * 背单词页面
+     */
+  wordsClick: function () {
+    var avatarUrl = this.data.userInfo.avatarUrl;
+    var nickName = this.data.userInfo.nickName;
+    wx.navigateTo({
+      url: '../words/words',
+    })
+  },
+
+  /**
    * 提示弹窗
    */
   infoClick: function () {

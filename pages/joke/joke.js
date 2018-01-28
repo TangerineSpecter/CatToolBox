@@ -7,22 +7,37 @@ Page({
   data: {
     page: 1,
     joke: '',
-    title: ''
+    title: '',
+    page: 1,
+    loading: false
   },
 
   randomClick: function () {
-    
+    var page = parseInt((Math.random() * this.data.page));
+    var thisPage = this;
+    thisPage.setData({ loading: false });
+    app.getJokeInfo(page, function (data) {
+      thisPage.setData({ title: data.showapi_res_body.contentlist[0].title });
+      thisPage.setData({ joke: data.showapi_res_body.contentlist[0].text });
+      thisPage.setData({ loading: true });
+    });
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var page = parseInt((Math.random() * 500));
     var thisPage = this;
-    app.getJokeInfo(this.data.page, function (data) {
-      thisPage.setData({ title: data.showapi_res_body.contentlist[0].title })
-      thisPage.setData({ joke: data.showapi_res_body.contentlist[0].text })
+    wx.setNavigationBarTitle({
+      title: '笑话大全'
     })
+    app.getJokeInfo(page, function (data) {
+      thisPage.setData({ title: data.showapi_res_body.contentlist[0].title });
+      thisPage.setData({ joke: data.showapi_res_body.contentlist[0].text });
+      thisPage.setData({ page: data.showapi_res_body.allPages });
+      thisPage.setData({ loading: true });
+    });
   },
 
   /**
