@@ -5,7 +5,7 @@
   </image>
 </view>
 <view>
-  <image src='../../img/index/3.jpg' class='top3' bindtap="jokeClick">
+  <image src='../../img/index/3.jpg' class='top3' bindtap="robotClick">
   </image>
   <image src='../../img/index/4.jpg' class='top4' bindtap="infoClick">
   </image>

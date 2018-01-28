@@ -8,7 +8,8 @@
     "pages/about/about",
     "pages/constellation/constellation",
     "pages/constellation/todayluck",
-    "pages/joke/joke"
+    "pages/joke/joke",
+    "pages/robot/robot"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -4,7 +4,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    version: '0.2.9'
+    version: '0.3.3'
   },
 
   /**

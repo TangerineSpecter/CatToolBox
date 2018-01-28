@@ -1,0 +1,30 @@
+<view class='news'>
+  <view class='new_top_txt'>您正在与小黄猫进行沟通</view>
+  <view id="windows" class="historycon">
+    <scroll-view scroll-y="true" scroll-top="{{scrollTop}}" class="history" wx:for="{{centendata}}" wx:key=''>
+      <view>
+        <text class='time'>{{item.time}}</text>
+      </view>
+      <block wx:if="{{item.is_show ==1}}">
+        <view class='my_right'>
+          <view class='page_row'><text class='new_txt'>{{item.centend}}</text>
+            <image class='new_img' src='{{avatarUrl}}'></image>
+          </view>
+        </view>
+      </block>
+      <block wx:else>
+        <view class='you_left'>
+          <view class='page_row'>
+            <image class='new_img' src='{{headimg}}'></image>
+            <text class='new_txt'>{{item.centend}}</text>
+          </view>
+        </view>
+      </block>
+    </scroll-view>
+  </view>
+</view>
+<view class='scorll_buttom' id="buttom"></view>
+<view class="sendmessage">
+  <input type="emoji" bindinput="bindChange" confirm-type="done" value='{{news_input_val}}' placeholder="" />
+  <button catchtap="add" type='warn'>发送</button>
+</view>

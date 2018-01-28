@@ -91,7 +91,7 @@ App({
   },
 
   //笑话查询
-  geJokeInfo: function (page, cb) {
+  getJokeInfo: function (page, cb) {
     var pageSize = 1;
     wx.request({
       url: config.joke_url,
@@ -106,6 +106,27 @@ App({
       },
       success: function (res) {
         console.log(res);
+        cb(res.data)
+      }
+    })
+  },
+
+  //图灵机器人
+  getRebotInfo: function (info, cb) {
+    var pageSize = 1;
+    wx.request({
+      url: config.rebot_url,
+      data: {
+        'showapi_appid': config.showapi_appid,
+        'showapi_sign': config.showapi_sign,
+        'info': info,
+        'userid': 'userid'
+      },
+      header: {
+
+      },
+      success: function (res) {
+        //console.log(res);
         cb(res.data)
       }
     })

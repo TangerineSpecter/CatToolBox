@@ -19,7 +19,7 @@ Page({
    */
   onLoad: function (options) {
     var thisPage = this;
-    app.geJokeInfo(this.data.page, function (data) {
+    app.getJokeInfo(this.data.page, function (data) {
       thisPage.setData({ title: data.showapi_res_body.contentlist[0].title })
       thisPage.setData({ joke: data.showapi_res_body.contentlist[0].text })
     })
