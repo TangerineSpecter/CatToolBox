@@ -73,19 +73,33 @@ page {
 }
 
 .my_txt {
-  width: 380rpx;
-  border-radius: 20px;
+  width: auto;
+  max-width: 380rpx;
+  height: 0%;
+  border-radius: 6px;
   background-color: #66CD00;
-  padding: 20rpx 30rpx 20rpx 30rpx;
-  box-shadow: 1rpx 1rpx 1rpx #888;
+  padding: 18rpx 25rpx;
+  box-shadow: 1rpx 1rpx #888;
+  margin-right: 8rpx;
 }
 
 .new_txt {
-  width: 50%;
-  border-radius: 20px;
+  width: auto;
+  max-width: 380rpx;
+  height: 0%;
+  border-radius: 6px;
   background-color: #95d4ff;
-  padding: 20rpx 30rpx 20rpx 30rpx;
-  box-shadow: 1rpx 1rpx 1rpx #888;
+  padding: 18rpx 25rpx;
+  box-shadow: 1rpx 1rpx #888;
+  margin-left: 8rpx;
+}
+
+/** 消息文字样式 **/
+.message_txt {
+  letter-spacing:2px;
+  text-align:left;
+  line-height:1.5em;
+  font-family:"Microsoft Yahei";
 }
 
 .sendmessage {
@@ -143,3 +157,8 @@ page {
   color: #999999;
   height:40rpx;
 }
+
+.page_row{  
+  display: flex;  
+  flex-direction: row;  
+}  

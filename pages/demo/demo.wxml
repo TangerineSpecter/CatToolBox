@@ -12,6 +12,9 @@
   </view>
 </view>
 
+<view class='new_txt'>
+哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈
+</view>
 
 
 <view wx:for="{{news}}" wx:for-item="news_item" wx:for-index="news_index" wx:key="key">

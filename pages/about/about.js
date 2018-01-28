@@ -1,19 +1,23 @@
+var count = 0;
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    version: '0.3.3'
+    version: '0.3.5'
   },
 
   /**
    * 演示页面
    */
   testClick: function () {
-    wx.navigateTo({
-      url: '../demo/demo'
-    })
+    count++;
+    if (count % 10 == 0) {
+      wx.navigateTo({
+        url: '../demo/demo'
+      });
+    }
   },
 
   /**
