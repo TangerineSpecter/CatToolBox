@@ -72,11 +72,20 @@ page {
   border-radius: 50%;
 }
 
-.new_txt {
+.my_txt {
   width: 380rpx;
+  border-radius: 20px;
+  background-color: #66CD00;
+  padding: 20rpx 30rpx 20rpx 30rpx;
+  box-shadow: 1rpx 1rpx 1rpx #888;
+}
+
+.new_txt {
+  width: 50%;
   border-radius: 20px;
   background-color: #95d4ff;
   padding: 20rpx 30rpx 20rpx 30rpx;
+  box-shadow: 1rpx 1rpx 1rpx #888;
 }
 
 .sendmessage {

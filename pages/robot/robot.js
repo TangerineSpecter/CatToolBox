@@ -19,7 +19,6 @@ Page({
 
   //发送消息
   add: function () {
-    var thisPage = this;
     if (this.data.news_input_val == '') {
       wx.showToast({
         title: '请输入发送内容',
@@ -29,7 +28,6 @@ Page({
       return;
     }
     var time = util.formatTime(new Date());
-    console.log(this.data.message)
     var centendata = {
       time: time,
       centend: this.data.message,
@@ -41,18 +39,25 @@ Page({
     } else {
       centent[length] = centendata;
     }
-    app.getRebotInfo(this.data.message, function (data) {
-      console.log(data.showapi_res_body.text);
+    this.setData({ centendata: centent });
+    this.setData({ news_input_val: '' });
+    this.rebotMessage(this.data.message);
+  },
+
+  rebotMessage: function (message) {
+    console.log(message)
+    var thisPage = this;
+    app.getRebotInfo(message, function (data) {
       thisPage.setData({ botMessage: data.showapi_res_body.text });
-      time = util.formatTime(new Date());
+      var time = util.formatTime(new Date());
       var bot = {
         time: time,
         centend: thisPage.data.botMessage,
         is_show: 0
       }
-      centent[length + 1] = bot;
+      var length = thisPage.data.centendata.length;
+      centent[length] = bot;
       thisPage.setData({ centendata: centent });
-      thisPage.setData({ news_input_val: '' });
       thisPage.bottom();
     });
   },
@@ -88,7 +93,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    this.setData({ centendata:''});
+    this.setData({ centendata: '' });
     centent = [];
   },
 
