@@ -15,3 +15,9 @@
 - 历史查询
 
 功能还在不断完善ing....
+
+## 关于
+
+### 小程序项目地址：
+        https://github.com/TangerineSpecter/CatToolBox
+        主要目的用于学习和交流，图片资源均来源于网络。
