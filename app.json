@@ -10,7 +10,9 @@
     "pages/joke/joke",
     "pages/robot/robot",
     "pages/words/words",
-    "pages/history/history"
+    "pages/history/history",
+    "pages/almanac/almanac",
+    "pages/almanac/fortune"
   ],
   "window": {
     "backgroundTextStyle": "light",

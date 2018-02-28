@@ -1,0 +1,94 @@
+<view>
+  <text class='font_info'>{{gongli}}</text>
+</view>
+<view class='font_info'>
+  <text>{{nongli}}</text>
+</view>
+<view class='mode_page'>
+  <view>
+    <text><text style="color:red;font-weight:bold">宜：</text>{{yi}}</text>
+  </view>
+  <view>
+    <text><text style="color:green;font-weight:bold">忌：</text>{{ji}}</text>
+  </view>
+</view>
+<view class='mode_page'>
+  <view>
+    <text><text style="font-weight:bold">生肖：</text>{{shengxiao}}</text>
+  </view>
+  <view>
+    <text><text style="font-weight:bold">星座：</text>{{xingzuo}}</text>
+  </view>
+  <view>
+    <text><text style="font-weight:bold">十二神：</text>{{sheng12}}</text>
+  </view>
+  <view>
+    <text><text style="font-weight:bold">节日：</text>{{jieri}}</text>
+  </view>
+  <view>
+    <text><text style="font-weight:bold">24节气：</text>{{jieqi24}}</text>
+  </view>
+</view>
+<view class='mode_page'>
+  <view>
+    <text><text style="font-weight:bold">值日：</text>{{zhiri}}</text>
+  </view>
+  <view>
+    <text><text style="font-weight:bold">冲煞：</text>{{chongsha}}</text>
+  </view>
+</view>
+<view class='mode_page'>
+  <view>
+    <text><text style="font-weight:bold">胎神吉方：</text>{{tszf}}</text>
+  </view>
+  <view>
+    <text><text style="font-weight:bold">彭祖百忌：</text>{{pzbj}}</text>
+  </view>
+  <view>
+    <text><text style="font-weight:bold">今日合害：</text>{{jrhh}}</text>
+  </view>
+  <view>
+    <text><text style="font-weight:bold">吉神宜趋：</text>{{jsyq}}</text>
+  </view>
+</view>
+<view class='mode_page'>
+  <view>
+    <text><text style="font-weight:bold">干支：</text>{{ganzhi}}</text>
+  </view>
+  <view>
+    <text><text style="font-weight:bold">纳音：</text>{{nayin}}</text>
+  </view>
+</view>
+<view class='mode_page'>
+  <text><text style="color:red;font-weight:bold">丑时(1~3点)</text>{{t1}}</text>
+</view>
+<view class='mode_page'>
+  <text><text style="color:red;font-weight:bold">寅时(3~5点)</text>{{t3}}</text>
+</view>
+<view class='mode_page'>
+  <text><text style="color:red;font-weight:bold">卯时(5~7点)</text>{{t5}}</text>
+</view>
+<view class='mode_page'>
+  <text><text style="color:red;font-weight:bold">辰时(7~9点)</text>{{t9}}</text>
+</view>
+<view class='mode_page'>
+  <text><text style="color:red;font-weight:bold">巳时(9~11点)</text>{{t11}}</text>
+</view>
+<view class='mode_page'>
+  <text><text style="color:red;font-weight:bold">午时(11~13点)</text>{{t13}}</text>
+</view>
+<view class='mode_page'>
+  <text><text style="color:red;font-weight:bold">未时(13~15点)</text>{{t15}}</text>
+</view>
+<view class='mode_page'>
+  <text><text style="color:red;font-weight:bold">申时(15~17点)</text>{{t17}}</text>
+</view>
+<view class='mode_page'>
+  <text><text style="color:red;font-weight:bold">酉时(17~19点)</text>{{t19}}</text>
+</view>
+<view class='mode_page'>
+  <text><text style="color:red;font-weight:bold">戌时(19~21点)</text>{{t21}}</text>
+</view>
+<view class='mode_page'>
+  <text><text style="color:red;font-weight:bold">亥时(21~23点)</text>{{t23}}</text>
+</view>

@@ -41,9 +41,11 @@ Page({
     }
     this.setData({ centendata: centent });
     this.setData({ news_input_val: '' });
+    this.bottom();
     this.rebotMessage(this.data.message);
   },
 
+  //机器人消息
   rebotMessage: function (message) {
     console.log(message)
     var thisPage = this;
@@ -58,6 +60,7 @@ Page({
       var length = thisPage.data.centendata.length;
       centent[length] = bot;
       thisPage.setData({ centendata: centent });
+      thisPage.bottom();
       thisPage.bottom();
     });
   },

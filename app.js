@@ -151,5 +151,25 @@ App({
         cb(res.data)
       }
     })
+  },
+
+  //黄历运势
+  getAlmanacInfo: function (date, cb) {
+    var pageSize = 1;
+    wx.request({
+      url: config.almanac_url,
+      data: {
+        'date': date,
+        'showapi_appid': config.showapi_appid,
+        'showapi_sign': config.showapi_sign
+      },
+      header: {
+
+      },
+      success: function (res) {
+        //console.log(res);
+        cb(res.data)
+      }
+    })
   }
 })

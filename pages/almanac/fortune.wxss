@@ -1,0 +1,42 @@
+/** 居中样式 **/
+
+.center {
+  justify-content: center;
+  display: flex;
+}
+
+/** 字体样式 **/
+
+.font_info {
+  width: 80%;
+  background-color: #fcfcfc;
+  margin-top: 40rpx;
+  border: 6rpx solid black;
+  padding: 6rpx;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: x-large;
+  display: flex;
+  justify-content: center;
+}
+
+.page_line {
+  width: 60%;
+  height: 0;
+  border-bottom: #000 4rpx dashed;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/**模块样式 **/
+
+.mode_page {
+  width: 80%;
+  background-color: #fcfcfc;
+  margin-top: 10px;
+  border: 2px solid black;
+  padding: 3px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: large;
+}

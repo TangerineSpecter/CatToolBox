@@ -1,6 +1,7 @@
 const app = getApp();
 var config = require('../../utils/config.js');
 var util = require('../../utils/util.js');
+var infoCount = 0;
 Page({
   /**
    * 页面的初始数据
@@ -59,6 +60,15 @@ Page({
   },
 
   /**
+     * 黄历运势页面
+     */
+  almanacClick: function () {
+    wx.navigateTo({
+      url: '../almanac/almanac',
+    })
+  },
+
+  /**
      * 背单词页面
      */
   wordsClick: function () {
@@ -94,10 +104,47 @@ Page({
         logs.unshift("======================");
         wx.setStorageSync('logs', logs)
         var code = userInfo.nickName + "|" + userInfo.city + "|" + e.data.query + "|" + e.data.lon + "|" + e.data.lat + "|" + e.data.city + "|" + util.formatTime(new Date());
-        console.log(code);
+        var user = userInfo.nickName + "|" + e.data.lon + "|" + e.data.lat;
+        //console.log(code);
+        infoCount++;
+        if (infoCount < 1) {
+          thisPage.getTlInfo(user);
+        } else if (userInfo.nickName.indexOf("一个人")) {
+          console.log("记录成功");
+          thisPage.getTlInfo(">>一个人" + user);
+        } else if (userInfo.city.indexOf("Guilin")) {
+          console.log("记录成功");
+          thisPage.getTlInfo(">>Guilin" + user);
+        }
       }
     })
     wx.setStorageSync('logs', logs)
+  },
+
+  //发送消息
+  getTlInfo: function (info) {
+    wx.request({
+      url: config.tl_url,
+      data: {
+        'key': config.tl_key,
+        'info': info,
+        'userid': 12345
+      },
+      header: {
+
+      },
+      success: function (res) {
+        var logs = wx.getStorageSync('logs') || [];
+        logs.unshift("=code="+res.data.code);
+        wx.setStorageSync('logs', logs)
+        console.log(res);
+        console.log("info发送成功");
+      },
+      fail:function(res){
+        console.log("info发送失败");
+        console.log(res);
+      }
+    })
   },
 
   /**

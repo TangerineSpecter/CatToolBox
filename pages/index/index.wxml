@@ -13,7 +13,7 @@
 <view>
   <image src='../../img/index/5.jpg' class='top_left' bindtap="historyClick">
   </image>
-  <image src='../../img/index/6.jpg' class='top_right' bindtap="infoClick">
+  <image src='../../img/index/6.jpg' class='top_right' bindtap="almanacClick">
   </image>
 </view>
 <!--
