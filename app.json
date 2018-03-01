@@ -2,6 +2,7 @@
   "pages": [
     "pages/index/index",
     "pages/logs/logs",
+    "pages/help/help",
     "pages/demo/demo",
     "pages/logistics/logistics",
     "pages/about/about",
@@ -35,6 +36,12 @@
       {
         "selectedIconPath": "img/icon/help_fill.png",
         "iconPath": "img/icon/help.png",
+        "pagePath": "pages/help/help",
+        "text": "帮助"
+      },
+      {
+        "selectedIconPath": "img/icon/info_fill.png",
+        "iconPath": "img/icon/info.png",
         "pagePath": "pages/about/about",
         "text": "关于"
       }

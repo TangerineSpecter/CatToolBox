@@ -1,65 +1,55 @@
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    list: [
+      {
+        id: 'logistics',
+        name: '物流查询',
+        open: false,
+        pages: ['输入订单号可以进行物流查询','点击选择快递进行快递选择']
+      },
+      {
+        id: 'constellation',
+        name: '星座运势',
+        open: false,
+        pages: ['滑动滚动条进行星座选择']
+      },
+      {
+        id: 'rebot',
+        name: '小黄猫',
+        open: false,
+        pages: ['一款与小黄猫交流的趣味小功能']
+      },
+      {
+        id: 'joke',
+        name: '笑话大全',
+        open: false,
+        pages: ['可以看到很多有趣的笑话','当前是随机的']
+      },
+      {
+        id: 'history',
+        name: '历史今日',
+        open: false,
+        pages: ['查看历史上的今天发生过什么有趣的事情']
+      },
+      {
+        id: 'almanac',
+        name: '黄历运势',
+        open: false,
+        pages: ['可以看看黄道吉日','当前只支持2015~2020年的查询']
+      }
+    ]
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  kindToggle: function (e) {
+    var id = e.currentTarget.id, list = this.data.list;
+    for (var i = 0, len = list.length; i < len; ++i) {
+      if (list[i].id == id) {
+        list[i].open = !list[i].open
+      } else {
+        list[i].open = false
+      }
+    }
+    this.setData({
+      list: list
+    });
   }
-})
+});

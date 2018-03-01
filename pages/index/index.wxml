@@ -16,11 +16,11 @@
   <image src='../../img/index/6.jpg' class='top_right' bindtap="almanacClick">
   </image>
 </view>
-<!--
 <view>
   <image src='../../img/index/7.jpg' class='top_left' bindtap="infoClick">
   </image>
+  <!--
   <image src='../../img/index/8.jpg' class='top_right' bindtap="wordsClick">
   </image>
+  -->
 </view>
--->

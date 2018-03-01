@@ -1,0 +1,29 @@
+<view class="page">
+  <view class="page__hd">
+    <view class="page__title">简介</view>
+    <view class="page__desc">猫咪工具箱是一款集结万千花样于一体的小程序，目前功能还在不断完善中，会不定期更新功能，所以想体验新版本，请长按小程序图标进行删除，然后重新搜索加载小程序就可以体验新版本了哟~♪(^∇^*)</view>
+  </view>
+  <view class="page__bd page__bd_spacing">
+    <view class="kind-list">
+      <block wx:for="{{list}}" wx:key="id">
+        <view class="kind-list__item">
+          <view id="{{item.id}}" class="weui-flex kind-list__item-hd {{item.open ? 'kind-list__item-hd_show' : ''}}" bindtap="kindToggle">
+            <view class="weui-flex__item">{{item.name}}</view>
+            <image class="kind-list__img" src="../../img/icon/table_list.png"></image>
+          </view>
+          <view class="kind-list__item-bd {{item.open ? 'kind-list__item-bd_show' : ''}}">
+            <view class="weui-cells {{item.open ? 'weui-cells_show' : ''}}">
+              <block wx:for="{{item.pages}}" wx:for-item="page" wx:key="*this">
+                <navigator url="{{page}}/{{page}}" class="weui-cell weui-cell_access">
+                  <view class="weui-cell">
+                    <view class="weui-cell__bd">{{page}}</view>
+                  </view>
+                </navigator>
+              </block>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

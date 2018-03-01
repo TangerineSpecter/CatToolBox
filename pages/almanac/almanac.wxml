@@ -12,6 +12,6 @@
     </picker-view-column>
   </picker-view>
   <view>
-    <button class='mode_btn' bindtap='submitClick' type='warn'>查询</button>
+    <button class='mode_btn' bindtap='submitClick' type='primary'>查询</button>
   </view>
 </view>
