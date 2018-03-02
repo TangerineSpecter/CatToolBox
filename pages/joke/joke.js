@@ -40,8 +40,9 @@ Page({
     })
     app.getJokeInfo(page, function (data) {
       if (data.showapi_res_code == 0) {
+        var joke = data.showapi_res_body.contentlist[0].text.replace(/<br \/>/g, "");
         thisPage.setData({ title: data.showapi_res_body.contentlist[0].title });
-        thisPage.setData({ joke: data.showapi_res_body.contentlist[0].text });
+        thisPage.setData({ joke: joke });
         thisPage.setData({ page: data.showapi_res_body.allPages });
         thisPage.setData({ currentPage: data.showapi_res_body.currentPage });
         thisPage.setData({ loading: true });

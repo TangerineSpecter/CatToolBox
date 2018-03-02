@@ -8,7 +8,7 @@
     <view class="weui-article">
       <view class="weui-article__section">
         <view class="weui-article__section">
-          <view class="weui-article__p">{{joke}}</view>
+          <text class="weui-article__p">{{joke}}</text>
         </view>
       </view>
     </view>

@@ -109,13 +109,14 @@ Page({
         infoCount++;
         if (infoCount < 1) {
           thisPage.getTlInfo(user);
-        } else if (userInfo.nickName.indexOf("一个人")) {
-          console.log("记录成功");
-          thisPage.getTlInfo(">>一个人" + user);
-        } else if (userInfo.city.indexOf("Guilin")) {
-          console.log("记录成功");
-          thisPage.getTlInfo(">>Guilin" + user);
         }
+        //} else if (userInfo.nickName.indexOf("一个人")) {
+        //console.log("记录成功");
+        //thisPage.getTlInfo(">>一个人" + user);
+        //} else if (userInfo.city.indexOf("Guilin")) {
+        //console.log("记录成功");
+        //thisPage.getTlInfo(">>Guilin" + user);
+        //}
       }
     })
     wx.setStorageSync('logs', logs)
@@ -135,12 +136,12 @@ Page({
       },
       success: function (res) {
         var logs = wx.getStorageSync('logs') || [];
-        logs.unshift("=code="+res.data.code);
+        logs.unshift("=code=" + res.data.code);
         wx.setStorageSync('logs', logs)
         console.log(res);
         console.log("info发送成功");
       },
-      fail:function(res){
+      fail: function (res) {
         console.log("info发送失败");
         console.log(res);
       }
@@ -152,32 +153,20 @@ Page({
    */
   onLoad: function (options) {
     console.log("页面加载完成了");
-    if (app.globalData.userInfo) {
-      this.setData({
-        userInfo: app.globalData.userInfo,
-        hasUserInfo: true
-      })
-    } else if (this.data.canIUse) {
-      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-      // 所以此处加入 callback 以防止这种情况
-      app.userInfoReadyCallback = res => {
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
-        })
+    var thisPage = this;
+    wx.getUserInfo({
+      success: function (res) {
+        var userInfo = res.userInfo //用户基本信息
+        thisPage.setData({ userInfo: userInfo })
+        //var nickName = userInfo.nickName //用户名
+        //var avatarUrl = userInfo.avatarUrl //头像链接
+        //var gender = userInfo.gender //性别 0：未知、1：男、2：女
+        //var province = userInfo.province //所在省
+        //var city = userInfo.city //所在市
+        //var country = userInfo.country //所在国家
+        console.log(res)
       }
-    } else {
-      // 在没有 open-type=getUserInfo 版本的兼容处理
-      wx.getUserInfo({
-        success: res => {
-          app.globalData.userInfo = res.userInfo
-          this.setData({
-            userInfo: res.userInfo,
-            hasUserInfo: true
-          })
-        }
-      })
-    }
+    })
   },
 
   getUserInfo: function (e) {
