@@ -1,5 +1,5 @@
 <view>
-  <image src='../../img/about/header.jpg' style='width:100%;height:800rpx'></image>
+  <image src='../../img/about/header.jpg' style='width:100%;height:800rpx' bindtap='logoClick' bindlongtap='logoLongClick'></image>
 </view>
 <view class='version' bindtap='testClick'>
   猫咪工具箱v{{version}}

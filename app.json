@@ -13,7 +13,8 @@
     "pages/words/words",
     "pages/history/history",
     "pages/almanac/almanac",
-    "pages/almanac/fortune"
+    "pages/almanac/fortune",
+    "pages/2048/2048"
   ],
   "window": {
     "backgroundTextStyle": "light",

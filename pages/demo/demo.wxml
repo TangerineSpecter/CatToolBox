@@ -19,7 +19,9 @@
 
 <view wx:for="{{news}}" wx:for-item="news_item" wx:for-index="news_index" wx:key="key">
   {{news_index}}--{{news_item}}
-
+  {{news_index}}--{{news_item}}
+  <text wx:if="{{news_index%2==0}}">偶数</text>
+  <text wx:if="{{news_index%2!=0}}">奇数</text>
 </view>
 
 <import src="../templates/footer" />

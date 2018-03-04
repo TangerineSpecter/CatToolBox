@@ -9,7 +9,8 @@ Page({
   data: {
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    modelindex: [1, 2, 3, 4, 5, 6, 7]
   },
 
   /**
@@ -164,7 +165,6 @@ Page({
         //var province = userInfo.province //所在省
         //var city = userInfo.city //所在市
         //var country = userInfo.country //所在国家
-        console.log(res)
       }
     })
   },
@@ -190,6 +190,15 @@ Page({
    */
   onShow: function () {
     console.log("页面显示了");
+    wx.onAccelerometerChange(function (e) {
+      if (e.x > 1 && e.y > 1) {
+        wx.showToast({
+          title: '摇一摇成功',
+          icon: 'success',
+          duration: 2000
+        })
+      }
+    })
   },
 
   /**

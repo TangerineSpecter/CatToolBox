@@ -6,7 +6,7 @@ Page({
   data: {
     btntext: '点击按钮',
     show: true,
-    news: ["aaa", "bbb"]
+    news: ["aaa", "bbb","ccc","ddd","eee","fff","ggg"]
   },
 
   view1click: function (event) {
@@ -16,6 +16,16 @@ Page({
 
   view2click: function () {
     console.log('view2被点击了')
+    console.log(this.data.news)
+    var news = this.data.news;
+    var res = [];
+    for (var i = 0, len = news.length; i < len; i++) {
+      var j = Math.floor(Math.random() * news.length);
+      res[i] = news[j];
+      news.splice(j, 1);
+    }
+    this.setData({news:res})
+    console.log(res);
   },
 
   view3click: function () {
