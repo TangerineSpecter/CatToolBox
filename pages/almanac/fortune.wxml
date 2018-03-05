@@ -89,6 +89,6 @@
 <view class='mode_page'>
   <text><text style="color:red;font-weight:bold">戌时(19~21点)</text>{{t21}}</text>
 </view>
-<view class='mode_page'>
+<view class='mode_page' style='margin-bottom: 15px'>
   <text><text style="color:red;font-weight:bold">亥时(21~23点)</text>{{t23}}</text>
 </view>

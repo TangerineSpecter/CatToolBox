@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    version: '0.7.0',
+    version: '0.7.1',
     text: '小样，别碰我喵~'
   },
 
