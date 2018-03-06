@@ -10,7 +10,7 @@ Page({
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    modelindex: [1, 2, 3, 4, 5, 6, 7]
+    modelindex: [1, 3, 5, 7]
   },
 
   /**
@@ -190,13 +190,20 @@ Page({
    */
   onShow: function () {
     console.log("页面显示了");
+    var thisPage = this;
+    //摇一摇
     wx.onAccelerometerChange(function (e) {
-      if (e.x > 1 && e.y > 1) {
-        wx.showToast({
-          title: '摇一摇成功',
-          icon: 'success',
-          duration: 2000
-        })
+      if (e.x > 1 || e.y > 1) {
+        console.log('摇一摇')
+        var modelindex = thisPage.data.modelindex;
+        var res = [];
+        for (var i = 0, len = modelindex.length; i < len; i++) {
+          var j = Math.floor(Math.random() * modelindex.length);
+          res[i] = modelindex[j];
+          modelindex.splice(j, 1);
+        }
+        thisPage.setData({ modelindex: res })
+        console.log(res);
       }
     })
   },
