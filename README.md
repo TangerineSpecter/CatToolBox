@@ -21,6 +21,6 @@
 
 ### 小程序项目地址：https://github.com/TangerineSpecter/CatToolBox
 
-###相关资源
+### 相关资源
 
 - [2048游戏](https://github.com/gabrielecirulli/2048)
