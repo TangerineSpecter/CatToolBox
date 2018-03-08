@@ -11,7 +11,7 @@ Page({
         id: 'constellation',
         name: '星座运势',
         open: false,
-        pages: ['滑动滚动条进行星座选择']
+        pages: ['左右滑动图片进行星座选择']
       },
       {
         id: 'rebot',

@@ -3,7 +3,7 @@
 .font_info {
   width: 80%;
   background-color: #fcfcfc;
-  margin-top: 40rpx;
+  margin-top: 140rpx;
   border: 6rpx solid black;
   padding: 6rpx;
   margin-left: auto;

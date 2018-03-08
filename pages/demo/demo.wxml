@@ -22,6 +22,9 @@
   {{news_index}}--{{news_item}}
   <text wx:if="{{news_index%2==0}}">偶数</text>
   <text wx:if="{{news_index%2!=0}}">奇数</text>
+  <view class="view2">
+      {{news_index}}--{{news_item}}
+  </view>
 </view>
 
 <import src="../templates/footer" />
