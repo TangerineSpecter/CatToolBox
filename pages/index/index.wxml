@@ -1,26 +1,60 @@
-<view>
-  <image src='../../img/index/1.jpg' class='top_left' bindtap="logisticsClick">
-  </image>
-  <image src='../../img/index/2.jpg' class='top_right' bindtap="constellationClick">
-  </image>
+<view class="content">
+  <view class='view1'>
+    <view class='view2'>
+      <view style='background: #56dea7;'>
+        <text class='font_left'>物流查询</text>
+        <image src='../../img/index/1.png' class='image_center' bindtap="logisticsClick">
+        </image>
+      </view>
+    </view>
+  </view>
+  <view class='view1'>
+    <view class='view2'>
+      <view style='background: #00b6de;'>
+        <text class='font_left'>星座运势</text>
+        <image src='../../img/index/2.png' class='image_center' bindtap="logisticsClick">
+        </image>
+      </view>
+    </view>
+  </view>
 </view>
-<view>
-  <image src='../../img/index/3.jpg' class='top_left' bindtap="robotClick">
-  </image>
-  <image src='../../img/index/4.jpg' class='top_right' bindtap="jokeClick">
-  </image>
+<view class="content">
+  <view class='view1'>
+    <view class='view2'>
+      <view style='background: #ff7659;'>
+        <text class='font_left'>小黄猫</text>
+        <image src='../../img/index/3.png' class='image_center' bindtap="logisticsClick">
+        </image>
+      </view>
+    </view>
+  </view>
+  <view class='view1'>
+    <view class='view2'>
+      <view style='background: #f8cd36;'>
+        <text class='font_left'>笑话大全</text>
+        <image src='../../img/index/4.png' class='image_center' bindtap="logisticsClick">
+        </image>
+      </view>
+    </view>
+  </view>
 </view>
-<view>
-  <image src='../../img/index/5.jpg' class='top_left' bindtap="historyClick">
-  </image>
-  <image src='../../img/index/6.jpg' class='top_right' bindtap="almanacClick">
-  </image>
-</view>
-<view>
-  <image src='../../img/index/7.jpg' class='top_left' bindtap="infoClick">
-  </image>
-  <!--
-  <image src='../../img/index/8.jpg' class='top_right' bindtap="wordsClick">
-  </image>
-  -->
+<view class="content">
+  <view class='view1'>
+    <view class='view2'>
+      <view style='background: #f26175;'>
+        <text class='font_left'>历史今日</text>
+        <image src='../../img/index/5.png' class='image_center' bindtap="logisticsClick">
+        </image>
+      </view>
+    </view>
+  </view>
+  <view class='view1'>
+    <view class='view2'>
+      <view style='background: #9e7ac2;'>
+        <text class='font_left'>黄历运势</text>
+        <image src='../../img/index/6.png' class='image_center' bindtap="logisticsClick">
+        </image>
+      </view>
+    </view>
+  </view>
 </view>
