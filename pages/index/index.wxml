@@ -12,7 +12,7 @@
     <view class='view2'>
       <view style='background: #00b6de;'>
         <text class='font_left'>星座运势</text>
-        <image src='../../img/index/2.png' class='image_center' bindtap="logisticsClick">
+        <image src='../../img/index/2.png' class='image_center' bindtap="constellationClick">
         </image>
       </view>
     </view>
@@ -23,7 +23,7 @@
     <view class='view2'>
       <view style='background: #ff7659;'>
         <text class='font_left'>小黄猫</text>
-        <image src='../../img/index/3.png' class='image_center' bindtap="logisticsClick">
+        <image src='../../img/index/3.png' class='image_center' bindtap="robotClick">
         </image>
       </view>
     </view>
@@ -32,7 +32,7 @@
     <view class='view2'>
       <view style='background: #f8cd36;'>
         <text class='font_left'>笑话大全</text>
-        <image src='../../img/index/4.png' class='image_center' bindtap="logisticsClick">
+        <image src='../../img/index/4.png' class='image_center' bindtap="jokeClick">
         </image>
       </view>
     </view>
@@ -43,7 +43,7 @@
     <view class='view2'>
       <view style='background: #f26175;'>
         <text class='font_left'>历史今日</text>
-        <image src='../../img/index/5.png' class='image_center' bindtap="logisticsClick">
+        <image src='../../img/index/5.png' class='image_center' bindtap="historyClick">
         </image>
       </view>
     </view>
@@ -52,7 +52,7 @@
     <view class='view2'>
       <view style='background: #9e7ac2;'>
         <text class='font_left'>黄历运势</text>
-        <image src='../../img/index/6.png' class='image_center' bindtap="logisticsClick">
+        <image src='../../img/index/6.png' class='image_center' bindtap="almanacClick">
         </image>
       </view>
     </view>
