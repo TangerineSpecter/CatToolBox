@@ -1,18 +1,18 @@
 <view class="content">
   <view class='view1'>
     <view class='view2'>
-      <view style='background: #56dea7;'>
+      <view style='background: #56dea7;' animation="{{animation1}}" bindtap="logisticsClick">
         <text class='font_left'>物流查询</text>
-        <image src='../../img/index/1.png' class='image_center' bindtap="logisticsClick">
+        <image src='../../img/index/1.png' class='image_center'>
         </image>
       </view>
     </view>
   </view>
   <view class='view1'>
     <view class='view2'>
-      <view style='background: #00b6de;'>
+      <view style='background: #00b6de;' animation="{{animation2}}" bindtap="constellationClick">
         <text class='font_left'>星座运势</text>
-        <image src='../../img/index/2.png' class='image_center' bindtap="constellationClick">
+        <image src='../../img/index/2.png' class='image_center'>
         </image>
       </view>
     </view>
@@ -21,18 +21,18 @@
 <view class="content">
   <view class='view1'>
     <view class='view2'>
-      <view style='background: #ff7659;'>
+      <view style='background: #ff7659;' animation="{{animation3}}" bindtap="robotClick">
         <text class='font_left'>小黄猫</text>
-        <image src='../../img/index/3.png' class='image_center' bindtap="robotClick">
+        <image src='../../img/index/3.png' class='image_center'>
         </image>
       </view>
     </view>
   </view>
   <view class='view1'>
     <view class='view2'>
-      <view style='background: #f8cd36;'>
+      <view style='background: #f8cd36;' animation="{{animation4}}" bindtap="jokeClick">
         <text class='font_left'>笑话大全</text>
-        <image src='../../img/index/4.png' class='image_center' bindtap="jokeClick">
+        <image src='../../img/index/4.png' class='image_center'>
         </image>
       </view>
     </view>
@@ -41,18 +41,18 @@
 <view class="content">
   <view class='view1'>
     <view class='view2'>
-      <view style='background: #f26175;'>
+      <view style='background: #f26175;' animation="{{animation5}}" bindtap="historyClick">
         <text class='font_left'>历史今日</text>
-        <image src='../../img/index/5.png' class='image_center' bindtap="historyClick">
+        <image src='../../img/index/5.png' class='image_center'>
         </image>
       </view>
     </view>
   </view>
   <view class='view1'>
     <view class='view2'>
-      <view style='background: #9e7ac2;'>
+      <view style='background: #9e7ac2;' animation="{{animation6}}" bindtap="almanacClick">
         <text class='font_left'>黄历运势</text>
-        <image src='../../img/index/6.png' class='image_center' bindtap="almanacClick">
+        <image src='../../img/index/6.png' class='image_center'>
         </image>
       </view>
     </view>

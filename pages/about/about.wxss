@@ -1,7 +1,18 @@
+.header {
+  background-color: #fcfcfc;
+  margin-top: 20rpx;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  box-shadow: 3px 3px 2px #888888;
+  border-radius:20rpx;
+}
+
 .version {
   width: 60%;
   background-color: #fcfcfc;
-  margin-top: 50px;
+  margin-top: 80rpx;
   border: 2px solid black;
   padding: 3px;
   margin-left: auto;

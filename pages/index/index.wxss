@@ -66,10 +66,16 @@ page {
   left: 15rpx;
 }
 
+/** 图片居中 **/
+
 .image_center {
   height: 50%;
   width: 50%;
   position: absolute;
   top: 25%;
   left: 25%;
+}
+
+.metro {
+  transform: scale(0.95);
 }

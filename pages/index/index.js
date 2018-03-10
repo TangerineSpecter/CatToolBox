@@ -10,63 +10,55 @@ Page({
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    modelindex: [1, 3, 5, 7]
+    modelindex: [1, 3, 5, 7],
+    animation1: {}, //物流
+    animation2: {}, //星座
+    animation3: {}, //小黄猫
+    animation4: {}, //笑话
+    animation5: {}, //历史
+    animation6: {}, //黄历
   },
 
   /**
    * 物流查询页面
    */
   logisticsClick: function () {
-    wx.navigateTo({
-      url: '../logistics/logistics'
-    })
+    this.animationClick(1);
   },
 
   /**
    * 星座运势页面
    */
   constellationClick: function () {
-    wx.navigateTo({
-      url: '../constellation/constellation',
-    })
+    this.animationClick(2);
   },
 
   /**
    * 笑话大全页面
    */
   jokeClick: function () {
-    wx.navigateTo({
-      url: '../joke/joke',
-    })
+    this.animationClick(4);
   },
 
   /**
    * 聊天机器人页面
    */
   robotClick: function () {
-    var avatarUrl = this.data.userInfo.avatarUrl;
-    var nickName = this.data.userInfo.nickName;
-    wx.navigateTo({
-      url: '../robot/robot?avatarUrl=' + avatarUrl + "&nickName=" + nickName,
-    })
+    this.animationClick(3);
   },
 
   /**
      * 历史今日页面
      */
   historyClick: function () {
-    wx.navigateTo({
-      url: '../history/history',
-    })
+    this.animationClick(5);
   },
 
   /**
      * 黄历运势页面
      */
   almanacClick: function () {
-    wx.navigateTo({
-      url: '../almanac/almanac',
-    })
+    this.animationClick(6);
   },
 
   /**
@@ -76,6 +68,89 @@ Page({
     wx.navigateTo({
       url: '../words/words',
     })
+  },
+
+  /**
+   * 动画效果
+   */
+  animationClick: function (index) {
+    console.log('动画效果');
+    var thisPage = this;
+    var animation = wx.createAnimation({
+      duration: 400,
+      timingFunction: "linear",
+    })
+    this.animation = animation
+    switch (index) {
+      case 1:
+        animation.scale(0.9, 0.9).step().scale(1, 1).step();
+        thisPage.setData({
+          animation1: animation.export()
+        })
+        setTimeout(function () {
+          wx.navigateTo({
+            url: '../logistics/logistics'
+          })
+        }.bind(this), 600)
+        break;
+      case 2:
+        animation.scale(0.9, 0.9).step().scale(1, 1).step();
+        thisPage.setData({
+          animation2: animation.export()
+        })
+        setTimeout(function () {
+          wx.navigateTo({
+            url: '../constellation/constellation',
+          })
+        }.bind(this), 600)
+        break;
+      case 3:
+        animation.scale(0.9, 0.9).step().scale(1, 1).step();
+        thisPage.setData({
+          animation3: animation.export()
+        })
+        setTimeout(function () {
+          var avatarUrl = this.data.userInfo.avatarUrl;
+          var nickName = this.data.userInfo.nickName;
+          wx.navigateTo({
+            url: '../robot/robot?avatarUrl=' + avatarUrl + "&nickName=" + nickName,
+          })
+        }.bind(this), 600)
+        break;
+      case 4:
+        animation.scale(0.9, 0.9).step().scale(1, 1).step();
+        thisPage.setData({
+          animation4: animation.export()
+        })
+        setTimeout(function () {
+          wx.navigateTo({
+            url: '../joke/joke',
+          })
+        }.bind(this), 600)
+        break;
+      case 5:
+        animation.scale(0.9, 0.9).step().scale(1, 1).step();
+        thisPage.setData({
+          animation5: animation.export()
+        })
+        setTimeout(function () {
+          wx.navigateTo({
+            url: '../history/history',
+          })
+        }.bind(this), 600)
+        break;
+      case 6:
+        animation.scale(0.9, 0.9).step().scale(1, 1).step();
+        thisPage.setData({
+          animation6: animation.export()
+        })
+        setTimeout(function () {
+          wx.navigateTo({
+            url: '../almanac/almanac',
+          })
+        }.bind(this), 600)
+        break;
+    }
   },
 
   /**

@@ -5,12 +5,13 @@
   view 11
   <view class='view2' bindtap='view2click' id="view2">
     view 22
-    <view class='view3' catchtap='view3click' id="view3">
+    <view class='view3' catchtap='view3click' id="view3"  animation="{{animationData}}" >
       view 33
-
     </view>
   </view>
 </view>
+
+<view animation="{{animationData}}" style="background:red,height:100rpx,width:100rpx"></view>
 
 <view class='new_txt'>
 哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈
