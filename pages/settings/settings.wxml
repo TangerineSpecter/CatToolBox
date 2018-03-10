@@ -1,0 +1,16 @@
+<view class="container">
+  <view bindtap="bindViewTap" class="userinfo">
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  </view>
+  <view class="list-container">
+  <view class="list-item" bindtap="showHelp">
+    <text class="list-name">帮助</text>
+    <image class="list-icon" src="../../img/icon/chevron.png"></image>
+  </view>
+  <view class="list-item" bindtap="showInfo">
+    <text class="list-name">关于</text>
+    <image class="list-icon" src="../../img/icon/chevron.png"></image>
+  </view>
+  </view>
+</view>

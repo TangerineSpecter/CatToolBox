@@ -1,6 +1,14 @@
 <view>
-  <image src='../../img/about/header.jpg' style='width:100%;height:800rpx' bindtap='logoClick' bindlongtap='logoLongClick'></image>
+  <image src='../../img/about/header.jpg' style='width:100%;height:800rpx' bindtap='logoClick'></image>
 </view>
-<view class='version' bindtap='testClick'>
-  猫咪工具箱v{{version}}
+<view class="page__hd">
+  <view class="page__title" style='font-weight:bold;'>猫咪工具箱
+    <text class="page__desc" style='color:#FFA500;'>v{{version}} 内测版</text>
+  </view>
+  <view class="page__desc">猫咪工具箱是一款集结万千花样于一体的小程序，目前功能还在不断完善中，会不定期更新版本。
+  </view>
+  <view>
+  </view>
+  <view class="page__desc">
+    <text style='color:red;font-weight:bold;'>关于新版本</text>：请在微信页下拉出小程序栏目，长按小程序图标进行删除，然后重新搜索加载小程序就可以体验新版本了哟~♪(^∇^*)</view>
 </view>

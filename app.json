@@ -14,7 +14,8 @@
     "pages/history/history",
     "pages/almanac/almanac",
     "pages/almanac/fortune",
-    "pages/2048/2048"
+    "pages/2048/2048",
+    "pages/settings/settings"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -37,14 +38,14 @@
       {
         "selectedIconPath": "img/icon/help_fill.png",
         "iconPath": "img/icon/help.png",
-        "pagePath": "pages/help/help",
-        "text": "帮助"
+        "pagePath": "pages/2048/2048",
+        "text": "放松"
       },
       {
-        "selectedIconPath": "img/icon/info_fill.png",
-        "iconPath": "img/icon/info.png",
-        "pagePath": "pages/about/about",
-        "text": "关于"
+        "selectedIconPath": "img/icon/setting_fill.png",
+        "iconPath": "img/icon/setting.png",
+        "pagePath": "pages/settings/settings",
+        "text": "设置"
       }
     ]
   }

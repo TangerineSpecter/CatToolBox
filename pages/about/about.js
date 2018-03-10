@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    version: '0.7.5',
+    version: '0.8.0',
     text: '小样，别碰我喵~'
   },
 
@@ -56,7 +56,7 @@ Page({
         thisPage.setData({ text: 'ヾ(Ő∀Ő๑)ﾉ【滚】' });
         break;
     }
-    clickNum++;
+    //clickNum++;
     wx.showToast({
       title: thisPage.data.text,
       icon: 'none',
