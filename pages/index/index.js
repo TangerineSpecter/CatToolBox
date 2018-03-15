@@ -9,6 +9,7 @@ Page({
   data: {
     userInfo: {},
     hasUserInfo: false,
+    isNavigate: true,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     modelindex: [1, 3, 5, 7],
     animation1: {}, //物流
@@ -81,75 +82,81 @@ Page({
       timingFunction: "linear",
     })
     this.animation = animation
-    switch (index) {
-      case 1:
-        animation.scale(0.9, 0.9).step().scale(1, 1).step();
-        thisPage.setData({
-          animation1: animation.export()
-        })
-        setTimeout(function () {
-          wx.navigateTo({
-            url: '../logistics/logistics'
+    if (thisPage.data.isNavigate) {
+      thisPage.setData({ isNavigate: false });
+      switch (index) {
+        case 1:
+          animation.scale(0.9, 0.9).step().scale(1, 1).step();
+          thisPage.setData({
+            animation1: animation.export()
           })
-        }.bind(this), 600)
-        break;
-      case 2:
-        animation.scale(0.9, 0.9).step().scale(1, 1).step();
-        thisPage.setData({
-          animation2: animation.export()
-        })
-        setTimeout(function () {
-          wx.navigateTo({
-            url: '../constellation/constellation',
+          setTimeout(function () {
+            wx.navigateTo({
+              url: '../logistics/logistics'
+            })
+          }.bind(this), 600)
+          break;
+        case 2:
+          animation.scale(0.9, 0.9).step().scale(1, 1).step();
+          thisPage.setData({
+            animation2: animation.export()
           })
-        }.bind(this), 600)
-        break;
-      case 3:
-        animation.scale(0.9, 0.9).step().scale(1, 1).step();
-        thisPage.setData({
-          animation3: animation.export()
-        })
-        setTimeout(function () {
-          var avatarUrl = this.data.userInfo.avatarUrl;
-          var nickName = this.data.userInfo.nickName;
-          wx.navigateTo({
-            url: '../robot/robot?avatarUrl=' + avatarUrl + "&nickName=" + nickName,
+          setTimeout(function () {
+            wx.navigateTo({
+              url: '../constellation/constellation',
+            })
+          }.bind(this), 600)
+          break;
+        case 3:
+          animation.scale(0.9, 0.9).step().scale(1, 1).step();
+          thisPage.setData({
+            animation3: animation.export()
           })
-        }.bind(this), 600)
-        break;
-      case 4:
-        animation.scale(0.9, 0.9).step().scale(1, 1).step();
-        thisPage.setData({
-          animation4: animation.export()
-        })
-        setTimeout(function () {
-          wx.navigateTo({
-            url: '../joke/joke',
+          setTimeout(function () {
+            var avatarUrl = this.data.userInfo.avatarUrl;
+            var nickName = this.data.userInfo.nickName;
+            wx.navigateTo({
+              url: '../robot/robot?avatarUrl=' + avatarUrl + "&nickName=" + nickName,
+            })
+          }.bind(this), 600)
+          break;
+        case 4:
+          animation.scale(0.9, 0.9).step().scale(1, 1).step();
+          thisPage.setData({
+            animation4: animation.export()
           })
-        }.bind(this), 600)
-        break;
-      case 5:
-        animation.scale(0.9, 0.9).step().scale(1, 1).step();
-        thisPage.setData({
-          animation5: animation.export()
-        })
-        setTimeout(function () {
-          wx.navigateTo({
-            url: '../history/history',
+          setTimeout(function () {
+            wx.navigateTo({
+              url: '../joke/joke',
+            })
+          }.bind(this), 600)
+          break;
+        case 5:
+          animation.scale(0.9, 0.9).step().scale(1, 1).step();
+          thisPage.setData({
+            animation5: animation.export()
           })
-        }.bind(this), 600)
-        break;
-      case 6:
-        animation.scale(0.9, 0.9).step().scale(1, 1).step();
-        thisPage.setData({
-          animation6: animation.export()
-        })
-        setTimeout(function () {
-          wx.navigateTo({
-            url: '../almanac/almanac',
+          setTimeout(function () {
+            wx.navigateTo({
+              url: '../history/history',
+            })
+          }.bind(this), 600)
+          break;
+        case 6:
+          animation.scale(0.9, 0.9).step().scale(1, 1).step();
+          thisPage.setData({
+            animation6: animation.export()
           })
-        }.bind(this), 600)
-        break;
+          setTimeout(function () {
+            wx.navigateTo({
+              url: '../almanac/almanac',
+            })
+          }.bind(this), 600)
+          break;
+      }
+      setTimeout(function () {
+        thisPage.setData({ isNavigate: true });
+      }.bind(this), 1500)
     }
   },
 
