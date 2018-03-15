@@ -58,3 +58,43 @@
     </view>
   </view>
 </view>
+<view class="content">
+  <view class='view1'>
+    <view class='view2'>
+      <view style='background: #BCEE68;' animation="{{animation7}}" bindtap="infoClick">
+        <text class='font_left'>每日壁纸</text>
+        <image src='../../img/index/7.png' class='image_center'>
+        </image>
+      </view>
+    </view>
+  </view>
+  <view class='view1'>
+    <view class='view2'>
+      <view style='background: #CAE1FF;' animation="{{animation6}}" bindtap="infoClick">
+        <text class='font_left'>颜文字</text>
+        <image src='../../img/index/8.png' class='image_center'>
+        </image>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="content">
+  <view class='view1'>
+    <view class='view2'>
+      <view style='background: #FFC125;' animation="{{animation7}}" bindtap="infoClick">
+        <text class='font_left'>计算器</text>
+        <image src='../../img/index/9.png' class='image_center'>
+        </image>
+      </view>
+    </view>
+  </view>
+  <view class='view1'>
+    <view class='view2'>
+      <view style='background: #CD919E;' animation="{{animation7}}" bindtap="infoClick">
+        <text class='font_left'>文字转换</text>
+        <image src='../../img/index/10.png' class='image_center'>
+        </image>
+      </view>
+    </view>
+  </view>
+</view>

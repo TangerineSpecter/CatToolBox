@@ -25,7 +25,7 @@ Page({
       if (data.showapi_res_code == 0) {
         //console.log(data)
         thisPage.setData({historyList:data.showapi_res_body.list});
-        console.log(thisPage.data.historyList);
+        //console.log(thisPage.data.historyList);
         thisPage.setData({ loading: true });
       } else {
         thisPage.onLoad();

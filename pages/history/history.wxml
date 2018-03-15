@@ -4,18 +4,20 @@
     <view class="page__desc">今日时间：{{time}}</view>
   </view>
   <loading hidden="{{loading}}">正在加载</loading>
-  <view class="page__bd">
-    <view class="weui-article">
-      <view class="weui-article__section">
-        <view class="weui-article__section">
-          <view wx:for="{{historyList}}" wx:key="key">
-            <view class="weui-article__p">
-              <image class="weui-article__img" src="{{item.img}}" mode="aspectFit" style="height: 180px" />
-            </view>
-            <view class="weui-article__p"><text style='font-weight:bold'>{{item.year}}年</text>，{{item.title}}</view>
+  <view class="articles">
+    <block wx:for="{{ historyList }}" wx:key="id">
+      <view class="article__item">
+        <view class="article__thumb">
+          <image wx:if="{{item.img}}" class="article__image" src="{{item.img}}"></image>
+          <image wx:elif="{{!item.img}}" class="article__image" src="../../img/icon/404.png"></image>
+        </view>
+        <view class="article__info">
+          <view class="article__desc">
+            <text class="article__source">{{item.year}}年</text>
           </view>
+          <view class="article__title article__title__large" style='white-space:pre-line'>{{item.title}}</view>
         </view>
       </view>
-    </view>
+    </block>
   </view>
 </view>
