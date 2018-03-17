@@ -5,7 +5,7 @@ Page({
         id: 'logistics',
         name: '物流查询',
         open: false,
-        pages: ['输入订单号可以进行物流查询','点击选择快递进行快递选择']
+        pages: ['输入订单号可以进行物流查询', '点击选择快递进行快递选择']
       },
       {
         id: 'constellation',
@@ -23,7 +23,7 @@ Page({
         id: 'joke',
         name: '笑话大全',
         open: false,
-        pages: ['可以看到很多有趣的笑话','当前是随机的']
+        pages: ['可以看到很多有趣的笑话', '当前是随机的']
       },
       {
         id: 'history',
@@ -35,7 +35,13 @@ Page({
         id: 'almanac',
         name: '黄历运势',
         open: false,
-        pages: ['可以看看黄道吉日','当前只支持2015~2020年的查询']
+        pages: ['可以看看黄道吉日', '当前只支持2015~2020年的查询']
+      },
+      {
+        id: 'wallpager',
+        name: '每日壁纸',
+        open: false,
+        pages: ['由Bing每天提供的精美壁纸', '点击图片可以预览', '预览下长按图片进行保存']
       }
     ]
   },

@@ -1,6 +1,6 @@
 <template name="vol-item">
   <view class="vol-card">
-    <image class="vol-picture" src="{{item.url}}" mode="aspectFill"></image>
+    <image id="{{index}}" class="vol-picture" src="{{item.url}}" mode="aspectFill" bindtap="previewImage"></image>
     <view class="vol-meta">
       <view>
         <text class="vol-number">VOL.{{item.index}}</text>

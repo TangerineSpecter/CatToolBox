@@ -1,9 +1,9 @@
 <view class="wall_page">
   <swiper class="vol-swiper" current="0">
-    <block wx:for="{{wallPageList}}" wx:key="this">
+    <block wx:for="{{wallPageList}}" wx:key="this" data-id="{{item.index}}">
       <swiper-item class="vol-swiper-item">
-        <import src="../templates/wallpage_content.wxml"/>
-        <template is="vol-item" data="{{item: item}}"/>
+        <import src="../templates/wallpage_content.wxml" />
+        <template is="vol-item" data="{{item: item,index:index}}" />
       </swiper-item>
     </block>
     <swiper-item></swiper-item>

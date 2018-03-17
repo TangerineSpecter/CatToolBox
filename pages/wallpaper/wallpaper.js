@@ -84,6 +84,21 @@ Page({
   },
 
   /**
+   * 预览图片
+   */
+  previewImage: function (e) {
+    console.log(e)
+    var index = e.currentTarget.id;
+    var current = this.data.wallPageList[parseInt(index)].url;
+    var img = new Array();
+    img[0] = current;
+    wx.previewImage({
+      current: current, // 当前显示图片的http链接  
+      urls: img // 需要预览的图片http链接列表  
+    })
+  },
+
+  /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
