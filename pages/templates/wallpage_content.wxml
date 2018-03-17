@@ -1,0 +1,15 @@
+<template name="vol-item">
+  <view class="vol-card">
+    <image class="vol-picture" src="{{item.url}}" mode="aspectFill"></image>
+    <view class="vol-meta">
+      <text class="vol-number">VOL.{{item.index}}</text>
+      <text class="vol-author">{{item.content}}</text>
+    </view>
+    <view class="vol-content">
+      <text class="vol-content-text">{{item.content}}</text>
+    </view>
+    <view class="vol-makettime">
+      <text class="vol-makettime-text">{{item.time}}</text>
+    </view>
+  </view>
+</template>

@@ -14,7 +14,8 @@
     "pages/almanac/almanac",
     "pages/almanac/fortune",
     "pages/2048/2048",
-    "pages/settings/settings"
+    "pages/settings/settings",
+    "pages/wallpaper/wallpaper"
   ],
   "window": {
     "backgroundTextStyle": "light",

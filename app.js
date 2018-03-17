@@ -170,5 +170,24 @@ App({
         cb(res.data)
       }
     })
+  },
+
+  //每日壁纸
+  getWallpaperInfo: function (page, cb) {
+    wx.request({
+      url: config.wallpaper_url,
+      data: {
+        'format': 'js',
+        'idx': page,
+        'n': 8
+      },
+      header: {
+
+      },
+      success: function (res) {
+        //console.log(res);
+        cb(res.data)
+      }
+    })
   }
 })

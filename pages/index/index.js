@@ -18,6 +18,7 @@ Page({
     animation4: {}, //笑话
     animation5: {}, //历史
     animation6: {}, //黄历
+    animation7: {}, //每日壁纸
   },
 
   /**
@@ -63,6 +64,13 @@ Page({
   },
 
   /**
+   * 每日壁纸
+   */
+  wallpaperClick: function () {
+    this.animationClick(7);
+  },
+
+  /**
      * 背单词页面
      */
   wordsClick: function () {
@@ -70,6 +78,8 @@ Page({
       url: '../words/words',
     })
   },
+
+
 
   /**
    * 动画效果
@@ -150,6 +160,17 @@ Page({
           setTimeout(function () {
             wx.navigateTo({
               url: '../almanac/almanac',
+            })
+          }.bind(this), 600)
+          break;
+        case 7:
+          animation.scale(0.9, 0.9).step().scale(1, 1).step();
+          thisPage.setData({
+            animation7: animation.export()
+          })
+          setTimeout(function () {
+            wx.navigateTo({
+              url: '../wallpaper/wallpaper',
             })
           }.bind(this), 600)
           break;
