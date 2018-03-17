@@ -35,6 +35,11 @@ page {
   color: #888;
 }
 
+.vol-author-view {
+  float: right;
+  width: 50%;
+}
+
 .vol-author {
   float: right;
 }

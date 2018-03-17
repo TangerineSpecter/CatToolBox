@@ -2,8 +2,12 @@
   <view class="vol-card">
     <image class="vol-picture" src="{{item.url}}" mode="aspectFill"></image>
     <view class="vol-meta">
-      <text class="vol-number">VOL.{{item.index}}</text>
-      <text class="vol-author">{{item.content}}</text>
+      <view>
+        <text class="vol-number">VOL.{{item.index}}</text>
+      </view>
+      <view class='vol-author-view'>
+        <text class="vol-author">{{item.author}} 作品</text>
+      </view>
     </view>
     <view class="vol-content">
       <text class="vol-content-text">{{item.content}}</text>
