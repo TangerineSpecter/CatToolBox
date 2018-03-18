@@ -23,8 +23,8 @@ Page({
     })
     app.getHistoryInfo(function (data) {
       if (data.showapi_res_code == 0) {
-        //console.log(data)
-        thisPage.setData({historyList:data.showapi_res_body.list});
+        console.log(data)
+        thisPage.setData({ historyList: data.showapi_res_body.list });
         //console.log(thisPage.data.historyList);
         thisPage.setData({ loading: true });
       } else {
@@ -33,6 +33,19 @@ Page({
     });
   },
 
+  /**
+   * 预览图片
+   */
+  previewImage: function (e) {
+    console.log(e)
+    var current = e.target.dataset.src;
+    var img = new Array();
+    img[0] = current;
+    wx.previewImage({
+      current: current, // 当前显示图片的http链接  
+      urls: img // 需要预览的图片http链接列表  
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

@@ -8,7 +8,7 @@
     <block wx:for="{{ historyList }}" wx:key="id">
       <view class="article__item">
         <view class="article__thumb">
-          <image wx:if="{{item.img}}" class="article__image" src="{{item.img}}"></image>
+          <image wx:if="{{item.img}}" class="article__image" src="{{item.img}}" bindtap="previewImage" data-src="{{item.img}}"></image>
           <image wx:elif="{{!item.img}}" class="article__image" src="../../img/icon/404.png"></image>
         </view>
         <view class="article__info">

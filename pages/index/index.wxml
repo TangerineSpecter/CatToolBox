@@ -78,7 +78,7 @@
     </view>
   </view>
 </view>
-<view class="content">
+<!--<view class="content">
   <view class='view1'>
     <view class='view2'>
       <view style='background: #FFC125;' animation="{{animation9}}" bindtap="infoClick">
@@ -97,4 +97,4 @@
       </view>
     </view>
   </view>
-</view>
+</view>-->

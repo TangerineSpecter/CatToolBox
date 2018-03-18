@@ -88,8 +88,7 @@ Page({
    */
   previewImage: function (e) {
     console.log(e)
-    var index = e.currentTarget.id;
-    var current = this.data.wallPageList[parseInt(index)].url;
+    var current = e.target.dataset.src;
     var img = new Array();
     img[0] = current;
     wx.previewImage({

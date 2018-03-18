@@ -29,7 +29,7 @@ Page({
         id: 'history',
         name: '历史今日',
         open: false,
-        pages: ['查看历史上的今天发生过什么有趣的事情']
+        pages: ['查看历史上的今天发生过什么有趣的事情','点击图片进行大图预览']
       },
       {
         id: 'almanac',
