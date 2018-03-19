@@ -1,0 +1,76 @@
+<view class="page">
+  <view class="page__hd">
+    <view class="page__title" style="text-align: center;">{{emotion}}</view>
+  </view>
+  <view class="page__bd page__bd_spacing">
+    <view class="weui-flex">
+      <view class="weui-flex__item">
+        <view class="placeholder" style="font-weight:bold;">左手</view>
+      </view>
+    </view>
+    <view class="weui-flex">
+      <view class="weui-flex__item">
+        <button bindtap='leftHand' data-type='0' class='weui-btn mini-btn' type="default" plain="true">←</button>
+      </view>
+      <view class="weui-flex__item">
+        <view class="placeholder">{{lefthand}}</view>
+      </view>
+      <view class="weui-flex__item">
+        <button bindtap='leftHand' data-type='1' class='weui-btn mini-btn' type="default" plain="true">→</button>
+      </view>
+    </view>
+    <view class="weui-flex">
+      <view class="weui-flex__item">
+        <view class="placeholder" style="font-weight:bold;">右手</view>
+      </view>
+    </view>
+    <view class="weui-flex">
+      <view class="weui-flex__item">
+        <button bindtap='rightHand' data-type='0' class='weui-btn mini-btn' type="default" plain="true">←</button>
+      </view>
+      <view class="weui-flex__item">
+        <view class="placeholder">{{righthand}}</view>
+      </view>
+      <view class="weui-flex__item">
+        <button bindtap='rightHand' data-type='1' class='weui-btn mini-btn' type="default" plain="true">→</button>
+      </view>
+    </view>
+    <view class="weui-flex">
+      <view class="weui-flex__item">
+        <view class="placeholder" style="font-weight:bold;">眼睛</view>
+      </view>
+    </view>
+    <view class="weui-flex">
+      <view class="weui-flex__item">
+        <button bindtap='eyes' data-type='0' class='weui-btn mini-btn' type="default" plain="true">←</button>
+      </view>
+      <view class="weui-flex__item">
+        <view class="placeholder">{{eyes}}</view>
+      </view>
+      <view class="weui-flex__item">
+        <button bindtap='eyes' data-type='1' class='weui-btn mini-btn' type="default" plain="true">→</button>
+      </view>
+    </view>
+    <view class="weui-flex">
+      <view class="weui-flex__item">
+        <view class="placeholder" style="font-weight:bold;">嘴巴</view>
+      </view>
+    </view>
+    <view class="weui-flex">
+      <view class="weui-flex__item">
+        <button bindtap='mouth' data-type='0' class='weui-btn mini-btn' type="default" plain="true">←</button>
+      </view>
+      <view class="weui-flex__item">
+        <view class="placeholder">{{mouth}}</view>
+      </view>
+      <view class="weui-flex__item">
+        <button bindtap='mouth' data-type='1' class='weui-btn mini-btn' type="default" plain="true">→</button>
+      </view>
+    </view>
+    <view class="weui-flex" style="margin-top:20rpx">
+      <view class="weui-flex__item">
+        <button class="mode_btn" type="warn" bindtap="copy">复制表情</button>
+      </view>
+    </view>
+  </view>
+</view>

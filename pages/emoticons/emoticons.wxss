@@ -1,0 +1,14 @@
+.placeholder {
+  margin: 5px;
+  text-align: center;
+  height: 2.3em;
+  line-height: 2.3em;
+}
+
+/** 按钮样式 */
+
+.mode_btn {
+  margin-top: 10px;
+  width: 50%;
+  box-shadow: 2px 2px 1px #888;
+}

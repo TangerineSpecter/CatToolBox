@@ -70,7 +70,7 @@
   </view>
   <view class='view1'>
     <view class='view2'>
-      <view style='background: #CAE1FF;' animation="{{animation8}}" bindtap="infoClick">
+      <view style='background: #CAE1FF;' animation="{{animation8}}" bindtap="emoticonsClick">
         <text class='font_left'>颜文字</text>
         <image src='../../img/index/8.png' class='image_center'>
         </image>

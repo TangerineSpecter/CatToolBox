@@ -19,6 +19,7 @@ Page({
     animation5: {}, //历史
     animation6: {}, //黄历
     animation7: {}, //每日壁纸
+    animation8: {}, //颜文字
   },
 
   /**
@@ -79,6 +80,12 @@ Page({
     })
   },
 
+  /**
+   * 颜文字
+   */
+  emoticonsClick: function () {
+    this.animationClick(8);
+  },
 
 
   /**
@@ -171,6 +178,17 @@ Page({
           setTimeout(function () {
             wx.navigateTo({
               url: '../wallpaper/wallpaper',
+            })
+          }.bind(this), 600)
+          break;
+        case 8:
+          animation.scale(0.9, 0.9).step().scale(1, 1).step();
+          thisPage.setData({
+            animation8: animation.export()
+          })
+          setTimeout(function () {
+            wx.navigateTo({
+              url: '../emoticons/emoticons',
             })
           }.bind(this), 600)
           break;
