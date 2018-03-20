@@ -18,6 +18,14 @@ Page({
 
   submit: function () {
     var text = this.data.text;
+    if (text.trim() == '') {
+      wx.showToast({
+        title: '请输入翻译内容',
+        icon: 'none',
+        duration: 2000
+      })
+      return;
+    }
     var thisPage = this;
     app.getTranslateInfo(text, function (data) {
       console.log(data.trans_result);
