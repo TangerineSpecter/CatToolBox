@@ -1,0 +1,21 @@
+<view class="page">
+  <view class="page__bd">
+    <view class="weui-cells__title">原文</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell">
+        <view class="weui-cell__bd">
+          <textarea class="weui-textarea" placeholder="请输入翻译内容" style="height: 10em" bindinput='inputtext' maxlength='1000' />
+          <view class="weui-textarea-counter">{{number}}/1000</view>
+        </view>
+      </view>
+    </view>
+    <button type='primary' bindtap='submit' class='mode_btn'>翻译</button>
+    <view class="weui-cells__title">结果</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell">
+        <view class="weui-cell__bd">
+          <textarea class="weui-textarea" style="height: 10em" value='{{result}}' /> </view>
+      </view>
+    </view>
+  </view>
+</view>

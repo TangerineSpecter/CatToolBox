@@ -141,6 +141,9 @@ Page({
   
   生命周期函数--监听页面加载 */
   onLoad: function (options) { //初始化数据 
+    wx.setNavigationBarTitle({
+      title: '颜文字'
+    })
     this.getLeftList();
     this.getRightList();
     this.getMouthList();

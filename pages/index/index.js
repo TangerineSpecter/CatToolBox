@@ -20,6 +20,8 @@ Page({
     animation6: {}, //黄历
     animation7: {}, //每日壁纸
     animation8: {}, //颜文字
+    animation9: {}, //计算器
+    animation10: {}, //文字翻译
   },
 
   /**
@@ -72,21 +74,25 @@ Page({
   },
 
   /**
-     * 背单词页面
-     */
-  wordsClick: function () {
-    wx.navigateTo({
-      url: '../words/words',
-    })
-  },
-
-  /**
    * 颜文字
    */
   emoticonsClick: function () {
     this.animationClick(8);
   },
 
+  /**
+   * 计算器
+   */
+  calculatorClick: function () {
+    this.animationClick(9);
+  },
+
+  /**
+   * 文字翻译
+   */
+  translateClick: function () {
+    this.animationClick(10);
+  },
 
   /**
    * 动画效果
@@ -189,6 +195,28 @@ Page({
           setTimeout(function () {
             wx.navigateTo({
               url: '../emoticons/emoticons',
+            })
+          }.bind(this), 600)
+          break;
+        case 9:
+          animation.scale(0.9, 0.9).step().scale(1, 1).step();
+          thisPage.setData({
+            animation9: animation.export()
+          })
+          setTimeout(function () {
+            wx.navigateTo({
+              url: '../calculator/calculator',
+            })
+          }.bind(this), 600)
+          break;
+        case 10:
+          animation.scale(0.9, 0.9).step().scale(1, 1).step();
+          thisPage.setData({
+            animation10: animation.export()
+          })
+          setTimeout(function () {
+            wx.navigateTo({
+              url: '../translate/translate',
             })
           }.bind(this), 600)
           break;

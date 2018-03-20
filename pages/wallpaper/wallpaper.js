@@ -22,6 +22,9 @@ Page({
         thisPage.onLoad();
       }
     });
+    wx.setNavigationBarTitle({
+      title: '每日壁纸'
+    })
   },
 
   //组装参数

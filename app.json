@@ -16,7 +16,9 @@
     "pages/2048/2048",
     "pages/settings/settings",
     "pages/wallpaper/wallpaper",
-    "pages/emoticons/emoticons"
+    "pages/emoticons/emoticons",
+    "pages/translate/translate",
+    "pages/calculator/calculator"
   ],
   "window": {
     "backgroundTextStyle": "light",

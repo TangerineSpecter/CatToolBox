@@ -78,10 +78,10 @@
     </view>
   </view>
 </view>
-<!--<view class="content">
+<view class="content">
   <view class='view1'>
     <view class='view2'>
-      <view style='background: #FFC125;' animation="{{animation9}}" bindtap="infoClick">
+      <view style='background: #FFC125;' animation="{{animation9}}" bindtap="calculatorClick">
         <text class='font_left'>计算器</text>
         <image src='../../img/index/9.png' class='image_center'>
         </image>
@@ -90,11 +90,11 @@
   </view>
   <view class='view1'>
     <view class='view2'>
-      <view style='background: #CD919E;' animation="{{animation10}}" bindtap="infoClick">
-        <text class='font_left'>文字转换</text>
+      <view style='background: #CD919E;' animation="{{animation10}}" bindtap="translateClick">
+        <text class='font_left'>文字翻译</text>
         <image src='../../img/index/10.png' class='image_center'>
         </image>
       </view>
     </view>
   </view>
-</view>-->
+</view>

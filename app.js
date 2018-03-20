@@ -189,5 +189,29 @@ App({
         cb(res.data)
       }
     })
+  },
+
+  //百度翻译
+  getTranslateInfo: function (text, cb) {
+    var salt = "orange";
+    var sign = MD5.hexMD5(config.baidu_appid + text + salt + config.baidu_key);
+    wx.request({
+      url: config.translate_url,
+      data: {
+        'q': text,
+        'from': 'en',
+        'to': 'zh',
+        'appid': config.baidu_appid,
+        'salt': salt,
+        'sign': sign
+      },
+      header: {
+
+      },
+      success: function (res) {
+        //console.log(res);
+        cb(res.data)
+      }
+    })
   }
 })

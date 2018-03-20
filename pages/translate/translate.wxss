@@ -1,0 +1,7 @@
+/** 按钮样式 */
+
+.mode_btn {
+  margin-top: 10px;
+  width: 50%;
+  box-shadow: 2px 2px 1px #888;
+}
