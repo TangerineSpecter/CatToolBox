@@ -29,7 +29,7 @@ Page({
         id: 'history',
         name: '历史今日',
         open: false,
-        pages: ['查看历史上的今天发生过什么有趣的事情','点击图片进行大图预览']
+        pages: ['查看历史上的今天发生过什么有趣的事情', '点击图片进行大图预览']
       },
       {
         id: 'almanac',
@@ -42,6 +42,18 @@ Page({
         name: '每日壁纸',
         open: false,
         pages: ['由Bing每天提供的精美壁纸', '点击图片可以预览', '预览下长按图片进行保存']
+      },
+      {
+        id: 'emotion',
+        name: '颜文字',
+        open: false,
+        pages: ['可以组合出各种表情符号']
+      },
+      {
+        id: 'translate',
+        name: '文字翻译',
+        open: false,
+        pages: ['目前支持英文翻译成中文', '今后会添加更多语言翻译支持']
       }
     ]
   },
