@@ -3,7 +3,7 @@
 
 <img src="img/logo.jpg">
 
-### 当前版本：v0.9.4
+### 当前版本：v0.9.5
 
 猫咪工具箱是一款集结万千花样于一体的小程序，目前功能还在不断完善中，会不定期更新功能~
 
@@ -18,6 +18,7 @@
 - 历史查询
 - 每日壁纸
 - 颜文字
+- 计算器
 - 文字翻译
 
 ## 关于
@@ -30,4 +31,5 @@
 
 - [2048游戏](https://github.com/gabrielecirulli/2048)
 - [ONE·一个](https://github.com/ahonn/weapp-one)
+- [计算器](https://github.com/dunizb/wxapp-sCalc)
 - [开发者文档](https://mp.weixin.qq.com/debug/wxadoc/dev/index.html)

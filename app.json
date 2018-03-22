@@ -18,7 +18,8 @@
     "pages/wallpaper/wallpaper",
     "pages/emoticons/emoticons",
     "pages/translate/translate",
-    "pages/calculator/calculator"
+    "pages/calculator/calculator",
+    "pages/calculator/callogs"
   ],
   "window": {
     "backgroundTextStyle": "light",

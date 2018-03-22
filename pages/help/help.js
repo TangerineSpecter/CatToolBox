@@ -50,6 +50,12 @@ Page({
         pages: ['可以组合出各种表情符号']
       },
       {
+        id: 'calculator',
+        name: '计算器',
+        open: false,
+        pages: ['一个很普通的计算器', "真的很普通，居然不能计算高数题，哼！"]
+      },
+      {
         id: 'translate',
         name: '文字翻译',
         open: false,
