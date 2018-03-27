@@ -1,115 +1,161 @@
-var app = getApp();
-const date = new Date()
-const years = []
-const months = []
-const days = []
 
-for (let i = 2015; i <= 2020; i++) {
-  years.push(i)
-}
-
-for (let i = 1; i <= 12; i++) {
-  months.push(i)
-}
-
-for (let i = 1; i <= 31; i++) {
-  days.push(i)
-}
-Page({
-
-  /**
-   * 页面的初始数据
-   */
+let chooseYear = null;
+let chooseMonth = null;
+const conf = {
   data: {
-    years: years,
-    year: date.getFullYear(),
-    months: months,
-    month: date.getMonth() + 1,
-    days: days,
-    day: date.getDate(),
-    year: date.getFullYear(),
-    value: [date.getFullYear() - 2015, date.getMonth(), date.getDate() - 1],
+    hasEmptyGrid: false,
+    showPicker: false
   },
-
-  bindChange: function (e) {
-    const val = e.detail.value
+  onLoad() {
+    const date = new Date();
+    const curYear = date.getFullYear();
+    const curMonth = date.getMonth() + 1;
+    const weeksCh = ['日', '一', '二', '三', '四', '五', '六'];
+    this.calculateEmptyGrids(curYear, curMonth);
+    this.calculateDays(curYear, curMonth);
     this.setData({
-      year: this.data.years[val[0]],
-      month: this.data.months[val[1]],
-      day: this.data.days[val[2]]
-    })
+      curYear,
+      curMonth,
+      weeksCh
+    });
   },
-
   /**
-   * 生命周期函数--监听页面加载
+   * 获取这个月第一天
    */
-  onLoad: function (options) {
-    wx.setNavigationBarTitle({
-      title: '黄历运势'
-    })
+  getThisMonthDays(year, month) {
+    return new Date(year, month, 0).getDate();
   },
-
-  submitClick: function () {
-    var month = this.data.month;
-    var day = this.data.day;
-    if (this.data.month < 10) {
-      month = "0" + this.data.month;
+  /**
+   * 获取每周第一天
+   */
+  getFirstDayOfWeek(year, month) {
+    return new Date(Date.UTC(year, month - 1, 1)).getDay();
+  },
+  /**
+   * 初始化日历
+   */
+  calculateEmptyGrids(year, month) {
+    const firstDayOfWeek = this.getFirstDayOfWeek(year, month);
+    let empytGrids = [];
+    if (firstDayOfWeek > 0) {
+      for (let i = 0; i < firstDayOfWeek; i++) {
+        empytGrids.push(i);
+      }
+      this.setData({
+        hasEmptyGrid: true,
+        empytGrids
+      });
+    } else {
+      this.setData({
+        hasEmptyGrid: false,
+        empytGrids: []
+      });
     }
-    if (this.data.day < 10) {
-      day = "0" + this.data.day;
+  },
+  /**
+   * 获取日
+   */
+  calculateDays(year, month) {
+    let days = [];
+
+    const thisMonthDays = this.getThisMonthDays(year, month);
+    for (let i = 1; i <= thisMonthDays; i++) {
+      days.push({
+        day: i,
+        choosed: false
+      });
     }
-    var date = String(this.data.year) + month + day;
-    wx.navigateTo({
-      url: '../almanac/fortune?date=' + date,
-    })
+
+    this.setData({
+      days
+    });
   },
-
   /**
-   * 生命周期函数--监听页面初次渲染完成
+   * 获取年月
    */
-  onReady: function () {
+  handleCalendar(e) {
+    const handle = e.currentTarget.dataset.handle;
+    const curYear = this.data.curYear;
+    const curMonth = this.data.curMonth;
+    if (handle === 'prev') {
+      let newMonth = curMonth - 1;
+      let newYear = curYear;
+      if (newMonth < 1) {
+        newYear = curYear - 1;
+        newMonth = 12;
+      }
 
+      this.calculateDays(newYear, newMonth);
+      this.calculateEmptyGrids(newYear, newMonth);
+
+      this.setData({
+        curYear: newYear,
+        curMonth: newMonth
+      });
+    } else {
+      let newMonth = curMonth + 1;
+      let newYear = curYear;
+      if (newMonth > 12) {
+        newYear = curYear + 1;
+        newMonth = 1;
+      }
+
+      this.calculateDays(newYear, newMonth);
+      this.calculateEmptyGrids(newYear, newMonth);
+
+      this.setData({
+        curYear: newYear,
+        curMonth: newMonth
+      });
+    }
   },
-
   /**
-   * 生命周期函数--监听页面显示
+   * 选择天
    */
-  onShow: function () {
-
+  tapDayItem(e) {
+    const idx = e.currentTarget.dataset.idx;
+    const days = this.data.days;
+    for (let i = 0; i < days.length; i++) {
+      days[i].choosed = false;
+    }
+    days[idx].choosed = !days[idx].choosed;
+    this.setData({
+      days,
+      showPicker: true,
+      day: days[idx].day
+    });
   },
-
   /**
-   * 生命周期函数--监听页面隐藏
+   * 选择改变
    */
-  onHide: function () {
-
+  pickerChange(e) {
+    const val = e.detail.value;
+    chooseYear = this.data.pickerYear[val[0]];
+    chooseMonth = this.data.pickerMonth[val[1]];
   },
-
   /**
-   * 生命周期函数--监听页面卸载
+   * 提交按钮
    */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  tapPickerBtn(e) {
+    const type = e.currentTarget.dataset.type;
+    const o = {
+      showPicker: false,
+    };
+    if (type == 'confirm') {
+      let month = this.data.curMonth;
+      let day = this.data.day;
+      if (month < 10) {
+        month = "0" + month;
+      }
+      if (day < 10) {
+        day = "0" + day;
+      }
+      let date = String(this.data.curYear) + month + day;
+      wx.navigateTo({
+        url: '../almanac/fortune?date=' + date,
+      })
+    }
+    this.setData(o);
   }
-})
+};
+Page(conf);

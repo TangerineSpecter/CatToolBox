@@ -1,17 +1,29 @@
-<view>
-  <view class="font_info">{{year}}年{{month}}月{{day}}日</view>
-  <picker-view indicator-style="height: 50px;" style="width: 100%; height: 300px;margin-top:50rpx;" value="{{value}}" bindchange="bindChange">
-    <picker-view-column>
-      <view wx:for="{{years}}" style="line-height: 50px" wx:key='key'>{{item}}年</view>
-    </picker-view-column>
-    <picker-view-column>
-      <view wx:for="{{months}}" style="line-height: 50px" wx:key='key'>{{item}}月</view>
-    </picker-view-column>
-    <picker-view-column>
-      <view wx:for="{{days}}" style="line-height: 50px" wx:key='key'>{{item}}日</view>
-    </picker-view-column>
-  </picker-view>
-  <view>
-    <button class='mode_btn' bindtap='submitClick' type='primary'>查询</button>
+<view class="flex box box-tb box-align-center">
+  <view class="calendar pink-color box box-tb">
+    <view class="top-handle fs28 box box-lr box-align-center box-pack-center">
+      <view class="prev box box-rl" bindtap="handleCalendar" data-handle="prev">
+        <view class="prev-handle box box-lr box-align-center box-pack-center fs36">《</view>
+      </view>
+      <view class="date-area box box-lr box-align-center box-pack-center fs36">{{curYear || "--"}} 年 {{curMonth || "--"}} 月</view>
+      <view class="next box box-lr" bindtap="handleCalendar" data-handle="next">
+        <view class="next-handle box box-lr box-align-center box-pack-center fs36">》</view>
+      </view>
+    </view>
+    <view class="weeks box box-lr box-pack-center box-align-center">
+      <view class="flex week fs36" wx:for="{{weeksCh}}" wx:key="{{index}}" data-idx="{{index}}">{{item}}</view>
+    </view>
+    <view class="days box box-lr box-wrap">
+      <view wx:if="{{hasEmptyGrid}}" class="grid white-color box box-align-center box-pack-center" wx:for="{{empytGrids}}" wx:key="{{index}}" data-idx="{{index}}">
+      </view>
+      <view class="grid white-color box box-align-center box-pack-center" wx:for="{{days}}" wx:key="{{index}}" data-idx="{{index}}" bindtap="tapDayItem">
+        <view class="day {{item.choosed ? 'border-radius pink-bg' : ''}} box box-align-center box-pack-center">{{item.day}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+<view wx:if="{{showPicker}}" class="box box-tb">
+  <view class="picker-btns box box-lr box-pack-between box-align-center">
+    <view class="picker-btn picker-cancel" data-type="cancel" bindtap="tapPickerBtn">取消</view>
+    <view class="picker-btn picker-confirm" data-type="confirm" bindtap="tapPickerBtn">确定</view>
   </view>
 </view>
