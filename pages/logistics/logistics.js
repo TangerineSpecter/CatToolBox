@@ -11,7 +11,9 @@ Page({
     expressType: 0,
     inputValue: '',
     array: ['顺丰', '百世', '中通', '申通', '圆通', '韵达', '邮政', 'EMS', '天天', '京东', '国通', '优速', '德邦', '申通', '快捷', '宅急送'],
-    index: 0
+    index: 0,
+    inputShowed: false,
+    inputVal: ""
   },
 
   queryClick: function () {
@@ -19,12 +21,24 @@ Page({
     app.getExpressInfo(this.data.expressNu, this.data.expressType, function (data) {
       console.log(data.Traces == '')
       if (data.Success != false && data.Traces != '') {
-        thispage.setData({ reason: '' });
-        thispage.setData({ expressInfo: data });
+        this.setData({
+          inputVal: "",
+          inputShowed: false,
+          reason: '',
+          expressInfo: data
+        });
       } else if (data.Success == true && data.Traces == '') {
-        thispage.setData({ reason: data.Reason });
+        thispage.setData({
+          inputVal: "",
+          inputShowed: false,
+          reason: data.Reason
+        });
       } else {
-        thispage.setData({ reason: "请输入订单号！" });
+        thispage.setData({
+          inputVal: "",
+          inputShowed: false,
+          reason: "请输入订单号！"
+        });
       }
       console.log(data)
     })
@@ -36,6 +50,19 @@ Page({
 
   input: function (data) {
     this.setData({ expressNu: data.detail.value });
+  },
+
+  showInput: function () {
+    this.setData({
+      inputShowed: true
+    });
+  },
+
+  hideInput: function () {
+    this.setData({
+      inputVal: "",
+      inputShowed: false
+    });
   },
 
   bindPickerChange: function (e) {

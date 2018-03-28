@@ -1,15 +1,5 @@
 /* pages/logistics/logistics.wxss */
 
-/** 输入框样式 */
-
-input {
-  border: 2px solid orange;
-  width: 60%;
-  margin: 5%;
-  padding: 5px;
-  box-shadow: 3px 3px 1px #888;
-}
-
 /** 物流信息框样式 */
 
 .info {
@@ -43,4 +33,112 @@ input {
   border: 1px solid black;
   padding: 5px;
   border-radius: 5px;
+}
+
+ul, li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  font-family: tahoma, arial, 'Hiragino Sans GB', '\5b8b\4f53', sans-serif;
+}
+
+.box-main {
+  margin: 0 auto;
+  width: 800px;
+  padding: 10px;
+  border: 1px solid #e8e8e8;
+}
+
+.box-main font.title {
+  height: 40px;
+  font-size: 18px;
+  line-height: 40px;
+  text-indent: 18px;
+  color: #1c81e5;
+  text-align: left;
+  background: #f7f7f7;
+  margin-bottom: 18px;
+}
+
+.package-box {
+  overflow: hidden;
+  margin: 0 auto;
+  width: 780px;
+}
+
+.package-box:before {
+  content: " ";
+  background-color: #fff;
+  display: block;
+  position: absolute;
+  top: -4px;
+  left: 20px;
+  width: 10px;
+  height: 4px;
+}
+
+.package-box .supply {
+  margin-top: 20px;
+  padding-right: 10px;
+  border-top: 1px solid #e8e8e8;
+  line-height: 28px;
+  color: #959595;
+  text-align: right;
+}
+
+.package-detail {
+  margin: -9px 0 0 12px;
+  padding: 0 0 0 10px;
+  list-style: none;
+  line-height: 30px;
+  font-size: 12px;
+  overflow: hidden;
+}
+
+.package-detail li {
+  border-left: 1px solid #d9d9d9;
+}
+
+.package-detail li:before {
+  content: '';
+  border: 3px solid #fff;
+  background: #d9d9d9;
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 5px;
+  margin-left: -6px;
+  margin-right: 10px;
+}
+
+.package-detail .date {
+  font-weight: 700;
+  margin-right: 8px;
+  font-family: arial;
+  display: inline-block;
+}
+
+.package-detail .text {
+  width: 580px;
+  display: inline-block;
+  vertical-align: text-top;
+  line-height: 1.3em;
+}
+
+.package-detail .latest:before {
+  background: #fe4300;
+  border-color: #f8e9e4;
+}
+
+.searchbar-result {
+  margin-top: 0;
+  font-size: 14px;
+}
+
+.searchbar-result:before {
+  display: none;
+}
+
+.weui-cell {
+  padding: 12px 15px 12px 35px;
 }

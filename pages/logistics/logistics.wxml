@@ -1,28 +1,44 @@
 <!--pages/logistics/logistics.wxml-->
+<view class="page">
+  <view class="page__bd">
+    <view class="weui-search-bar">
+      <view class="weui-search-bar__form">
+        <view class="weui-search-bar__box">
+          <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+          <input type="text" class="weui-search-bar__input" placeholder="请输入物流单号" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="input" />
+          <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+            <icon type="clear" size="14"></icon>
+          </view>
+        </view>
+        <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+          <icon class="weui-icon-search" type="search" size="14"></icon>
+          <view class="weui-search-bar__text">物流单号</view>
+        </label>
+      </view>
+      <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="queryClick">搜索</view>
+    </view>
+  </view>
+</view>
 <view class='container' style='overflow:hidden'>
-  <input placeholder="请输入物流单号" bindinput='input' value="{{inputValue}}" />
   <view class="section">
     <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
       <view class="picker">
-
         <text class='spider'>选择快递：{{array[index]}}</text>
       </view>
     </picker>
   </view>
-  <button class='btn-query' type='primary' bindtap="queryClick">查询</button>
-  <button class='btn-clear' type='primary' bindtap="clearClick">清空</button>
-  <scroll-view class='info' scroll-y="true" style="height:590rpx;">
-    <text>{{reason}}</text>
-    <view wx:for="{{expressInfo.Traces}}" wx:key="key">
-      <view>
-        <text style='font-size: 30rpx'>{{item.AcceptStation}}</text>
-      </view>
-      <view>
-        <text style='font-size: 20rpx'>{{item.AcceptTime}}</text>
-      </view>
-      <view>
-        ----------------------------------------------
-      </view>
-    </view>
-  </scroll-view>
+</view>
+<view class="box-main">
+  <font class="title">
+    <span>物流跟踪信息</span>
+  </font>
+  <text>{{reason}}</text>
+  <view class="package-box" wx:for="{{expressInfo.Traces}}" wx:key="key">
+    <ul class="package-detail">
+      <li class="latest">
+        <span class="date">{{item.AcceptTime}}</span>
+        <span class="text">{{item.AcceptStation}}</span>
+      </li>
+    </ul>
+  </view>
 </view>
