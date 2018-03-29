@@ -7,7 +7,9 @@ Page({
   data: {
     text: '',
     result: '',
-    number: 0
+    number: 0,
+    initInfo: "英文",
+    resultInfo: "中文"
   },
 
   inputtext: function (e) {

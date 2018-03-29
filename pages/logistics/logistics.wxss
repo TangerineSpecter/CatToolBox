@@ -35,6 +35,16 @@
   border-radius: 5px;
 }
 
+.picker_title {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  border-width: 1px;
+  border-style: solid;
+  color: #919191;
+  box-shadow: 2px 2px 1px #888888;
+}
+
 ul, li {
   padding: 0;
   margin: 0;
@@ -44,7 +54,7 @@ ul, li {
 
 .box-main {
   margin: 0 auto;
-  width: 800px;
+  width: 100%;
   padding: 10px;
   border: 1px solid #e8e8e8;
 }

@@ -13,31 +13,35 @@ Page({
     array: ['顺丰', '百世', '中通', '申通', '圆通', '韵达', '邮政', 'EMS', '天天', '京东', '国通', '优速', '德邦', '申通', '快捷', '宅急送'],
     index: 0,
     inputShowed: false,
-    inputVal: ""
+    inputVal: "",
+    errorInfo: true
   },
 
   queryClick: function () {
     var thispage = this;
     app.getExpressInfo(this.data.expressNu, this.data.expressType, function (data) {
-      console.log(data.Traces == '')
+      console.log(data)
       if (data.Success != false && data.Traces != '') {
-        this.setData({
+        thispage.setData({
           inputVal: "",
           inputShowed: false,
           reason: '',
-          expressInfo: data
+          expressInfo: data,
+          errorInfo: false
         });
       } else if (data.Success == true && data.Traces == '') {
         thispage.setData({
           inputVal: "",
           inputShowed: false,
-          reason: data.Reason
+          reason: data.Reason,
+          errorInfo: true
         });
       } else {
         thispage.setData({
           inputVal: "",
           inputShowed: false,
-          reason: "请输入订单号！"
+          reason: "请输入订单号！",
+          errorInfo: true
         });
       }
       console.log(data)

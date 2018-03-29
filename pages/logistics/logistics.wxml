@@ -19,21 +19,23 @@
     </view>
   </view>
 </view>
-<view class='container' style='overflow:hidden'>
-  <view class="section">
-    <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
-      <view class="picker">
-        <text class='spider'>选择快递：{{array[index]}}</text>
-      </view>
-    </picker>
+<view class="weui-cells weui-cells_after-title picker_title" style="margin-top:-50rpx;">
+  <view class="weui-cell weui-cell_select">
+    <view class="weui-cell__hd weui-cell__hd_in-select-after">
+      <view class="weui-label">快递选择：</view>
+    </view>
+    <view class="weui-cell__bd">
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+        <view style="color:red;">{{array[index]}}</view>
+      </picker>
+    </view>
   </view>
 </view>
-<view class="box-main">
+<view class="box-main" style="margin-top:40rpx;">
   <font class="title">
     <span>物流跟踪信息</span>
   </font>
-  <text>{{reason}}</text>
-  <view class="package-box" wx:for="{{expressInfo.Traces}}" wx:key="key">
+  <view class="package-box" wx:for="{{expressInfo.Traces}}" wx:key="key" wx:if="{{!errorInfo}}">
     <ul class="package-detail">
       <li class="latest">
         <span class="date">{{item.AcceptTime}}</span>
@@ -42,3 +44,4 @@
     </ul>
   </view>
 </view>
+<text wx:if="{{errorInfo}}">{{reason}}</text>
