@@ -22,9 +22,6 @@ Page({
         thisPage.onLoad();
       }
     });
-    wx.setNavigationBarTitle({
-      title: '每日壁纸'
-    })
   },
 
   //组装参数
@@ -44,6 +41,8 @@ Page({
       thisPage.setData({ wallPageList: images });
       //console.log(thisPage.data.wallPageList)
     }
+    console.log(this.data.wallPageList)
+    console.log(this.data.wallPageList.length)
   },
 
   //处理时间

@@ -6,6 +6,5 @@
         <template is="vol-item" data="{{item: item,index:index}}" />
       </swiper-item>
     </block>
-    <swiper-item></swiper-item>
   </swiper>
 </view>

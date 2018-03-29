@@ -44,20 +44,32 @@ Page({
     })
   },
 
+  /**
+   * 清除输入框
+   */
   clearClick: function () {
     this.setData({ inputValue: '' });
   },
 
+  /**
+   * 输入框
+   */
   input: function (data) {
     this.setData({ expressNu: data.detail.value });
   },
 
+  /**
+   * 展示输入框
+   */
   showInput: function () {
     this.setData({
       inputShowed: true
     });
   },
 
+  /**
+   * 隐藏输入框
+   */
   hideInput: function () {
     this.setData({
       inputVal: "",
@@ -65,6 +77,9 @@ Page({
     });
   },
 
+  /**
+   * 选择快递
+   */
   bindPickerChange: function (e) {
     var type = e.detail.value;
     switch (type) {
