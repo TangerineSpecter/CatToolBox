@@ -192,15 +192,15 @@ App({
   },
 
   //百度翻译
-  getTranslateInfo: function (text, cb) {
+  getTranslateInfo: function (text, to, cb) {
     var salt = "orange";
     var sign = MD5.hexMD5(config.baidu_appid + text + salt + config.baidu_key);
     wx.request({
       url: config.translate_url,
       data: {
         'q': text,
-        'from': 'en',
-        'to': 'zh',
+        'from': 'auto',
+        'to': to,
         'appid': config.baidu_appid,
         'salt': salt,
         'sign': sign

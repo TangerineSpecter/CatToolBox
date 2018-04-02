@@ -5,3 +5,18 @@
   width: 50%;
   box-shadow: 2px 2px 1px #888;
 }
+
+.change_btn {
+  height: 90rpx;
+  width: 90rpx;
+  margin-left: auto;
+  margin-top: auto;
+  border: 3rpx solid #00b2ee;
+  border-radius: 5px;
+  box-shadow: 2px 2px 1px #888;
+  background-color: #009acd;
+}
+
+.view_btn {
+  display: flex;
+}
