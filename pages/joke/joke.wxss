@@ -18,8 +18,28 @@
 
 /** 按钮样式 */
 
+.box_btn {
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  margin-bottom: 10%;
+}
+
 .mode_btn {
   margin-top: 10px;
   width: 50%;
+  box-shadow: 2px 2px 1px #888;
+}
+
+.mode_left_btn {
+  margin-top: 10px;
+  width: 15%;
+  box-shadow: 2px 2px 1px #888;
+}
+
+.mode_right_btn {
+  margin-top: 10px;
+  width: 15%;
   box-shadow: 2px 2px 1px #888;
 }

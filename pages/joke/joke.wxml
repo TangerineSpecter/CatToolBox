@@ -13,7 +13,9 @@
       </view>
     </view>
   </view>
-  <view>
-    <button class='mode_btn' bindtap='randomClick' type='warn'>换一条</button>
-  </view>
+</view>
+<view style='display:flex;'>
+  <button class='mode_left_btn' bindtap='leftClick' type='warn'>《</button>
+  <button class='mode_btn' bindtap='randomClick' type='warn'>换一条</button>
+  <button class='mode_right_btn' bindtap='rightClick' type='warn'>》</button>
 </view>
