@@ -49,7 +49,7 @@ Page({
     var init = this.data.init;
     console.log(init)
     var to = this.data.to;
-    app.getTranslateInfo(text, init, to, function (data) {
+    app.getTranslateInfo(text, to, function (data) {
       console.log(data.trans_result);
       console.log(data)
       thisPage.setData({ result: data.trans_result[0].dst });
