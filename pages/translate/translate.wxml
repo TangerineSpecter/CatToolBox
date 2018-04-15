@@ -9,7 +9,11 @@
         </view>
       </view>
     </view>
-    <button type='primary' bindtap='submit' class='mode_btn'>翻译</button>
+    <view class='box_btn'>
+      <button type='primary' bindtap='leftClick' class='mode_btn' style="width:80rpx">《</button>
+      <button type='primary' bindtap='submit' class='mode_btn'>翻译：{{resultInfo}}</button>
+      <button type='primary' bindtap='rightClick' class='mode_btn' style="width:80rpx">》</button>
+    </view>
     <view class="weui-cells__title">结果</view>
     <view class="weui-cells weui-cells_after-title">
       <view class="weui-cell">

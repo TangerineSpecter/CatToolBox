@@ -11,7 +11,10 @@ Page({
     to: 'zh',
     number: 0,
     initInfo: "英文",
-    resultInfo: "中文"
+    resultInfo: "中文",
+    resultList: ['zh', 'en', 'yue', 'wyw', 'jp', 'kor', 'fra', 'spa', 'th', 'ara', 'ru', 'pt', 'de', 'it', 'el', 'nl', 'pl', 'bul', 'est', 'dan', 'fin', 'cs', 'rom', 'swe', 'hu', 'cht', 'vie'],
+    resultListInfo: ['中文', '英文', '粤语', '文言文', '日语', '韩语', '法语', '西班牙语', '泰语', '阿拉伯语', '俄语', '葡萄牙语', '德语', '意大利语', '希腊语', '荷兰语', '波兰语', '保加利亚语', '爱沙尼亚语', '丹麦语', '芬兰语', '捷克语', '罗马尼亚语', '瑞典语', '匈牙利语', '繁体中文', '越南语'],
+    index: 0
   },
 
   inputtext: function (e) {
@@ -32,6 +35,37 @@ Page({
     });
     console.log(this.data.init + "---" + this.data.to)
   },
+
+  //左翻
+  leftClick: function () {
+    let index = this.data.index;
+    let length = this.data.resultList.length;
+    index--;
+    if (index < 0) {
+      index = length - 1;
+    }
+    this.setData({
+      index: index,
+      to: this.data.resultList[index],
+      resultInfo: this.data.resultListInfo[index]
+    })
+  },
+
+  //右翻
+  rightClick: function () {
+    let index = this.data.index;
+    let length = this.data.resultList.length;
+    index++;
+    if (index >= length) {
+      index = 0;
+    }
+    this.setData({
+      index: index,
+      to: this.data.resultList[index],
+      resultInfo: this.data.resultListInfo[index]
+    })
+  },
+
   /**
    * 提交翻译
    */
@@ -47,7 +81,6 @@ Page({
     }
     var thisPage = this;
     var init = this.data.init;
-    console.log(init)
     var to = this.data.to;
     app.getTranslateInfo(text, to, function (data) {
       console.log(data.trans_result);

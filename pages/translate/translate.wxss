@@ -1,5 +1,10 @@
 /** 按钮样式 */
 
+.box_btn {
+  display: flex;
+  width: 100%;
+}
+
 .mode_btn {
   margin-top: 10px;
   width: 50%;

@@ -195,13 +195,13 @@ App({
   getTranslateInfo: function (text, to, cb) {
     var salt = new Date().getTime();
     var sign = MD5.hexMD5(config.baidu_appid + text + salt + config.baidu_key);
-    console.log(sign)
+    //console.log(sign)
     wx.request({
       url: config.translate_url,
       data: {
         'q': text,
         'from': 'auto',
-        'to': 'zh',
+        'to': to,
         'appid': config.baidu_appid,
         'salt': salt,
         'sign': sign
