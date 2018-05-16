@@ -16,7 +16,7 @@ Page({
     animation2: {}, //星座
     animation3: {}, //小黄猫
     animation4: {}, //笑话
-    animation5: {}, //历史
+    animation5: {}, //空气质量
     animation6: {}, //黄历
     animation7: {}, //每日壁纸
     animation8: {}, //颜文字
@@ -56,6 +56,13 @@ Page({
      * 历史今日页面
      */
   historyClick: function () {
+    this.animationClick(5);
+  },
+
+  /**
+   * 空气质量页面
+   */
+  airqualityClick: function () {
     this.animationClick(5);
   },
 
@@ -161,7 +168,7 @@ Page({
           })
           setTimeout(function () {
             wx.navigateTo({
-              url: '../history/history',
+              url: '../airquality/airquality',
             })
           }.bind(this), 600)
           break;

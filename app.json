@@ -19,7 +19,8 @@
     "pages/emoticons/emoticons",
     "pages/translate/translate",
     "pages/calculator/calculator",
-    "pages/calculator/callogs"
+    "pages/calculator/callogs",
+    "pages/airquality/airquality"
   ],
   "window": {
     "backgroundTextStyle": "light",

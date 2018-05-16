@@ -1,0 +1,36 @@
+<view>
+  <text>城市：{{area}}</text>
+</view>
+<view>
+  <text>一氧化碳一小时平均：{{co}}mg/㎡</text>
+</view>
+<view>
+  <text>发布时间：{{ct}}</text>
+</view>
+<view>
+  <text>空气质量指数：{{aqi}}</text>
+</view>
+<view>
+  <text>二氧化氮一小时平均：{{no2}}mg/㎡</text>
+</view>
+<view>
+  <text>臭氧一小时平均：{{o3}}μg/㎡</text>
+</view>
+<view>
+  <text>臭氧8小时滑动平均：{{o3h}}μg/㎡</text>
+</view>
+<view>
+  <text>颗粒物（粒径小于等于10μm）1小时平均：{{pm10}}μg/㎡</text>
+</view>
+<view>
+  <text>颗粒物（粒径小于等于2.5μm）1小时平均：{{pm25}}μg/㎡</text>
+</view>
+<view>
+  <text>空气质量：{{quality}}</text>
+</view>
+<view>
+  <text>二氧化硫一小时平均：{{so2}}μg/㎡</text>
+</view>
+<view>
+  <text>城市代码：{{area_code}}</text>
+</view>

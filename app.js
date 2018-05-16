@@ -114,7 +114,6 @@ App({
 
   //图灵机器人
   getRebotInfo: function (info, cb) {
-    var pageSize = 1;
     wx.request({
       url: config.rebot_url,
       data: {
@@ -135,7 +134,6 @@ App({
 
   //历史上的今天
   getHistoryInfo: function (cb) {
-    var pageSize = 1;
     wx.request({
       url: config.history_url,
       data: {
@@ -152,9 +150,27 @@ App({
     })
   },
 
+  //空气质量
+  getAirQualityInfo: function (cb) {
+    wx.request({
+      url: config.airquality_url,
+      data: {
+        'showapi_appid': config.showapi_appid,
+        'showapi_sign': config.showapi_sign,
+        'city': '深圳'
+      },
+      header: {
+
+      },
+      success: function (res) {
+        //console.log(res);
+        cb(res.data)
+      }
+    })
+  },
+
   //黄历运势
   getAlmanacInfo: function (date, cb) {
-    var pageSize = 1;
     wx.request({
       url: config.almanac_url,
       data: {

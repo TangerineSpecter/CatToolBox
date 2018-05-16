@@ -29,7 +29,7 @@ Page({
         id: 'history',
         name: '历史今日',
         open: false,
-        pages: ['查看历史上的今天发生过什么有趣的事情', '点击图片进行大图预览']
+        pages: ['查看历史上的今天发生过什么有趣的事情', '点击图片进行大图预览', '暂时取消此功能']
       },
       {
         id: 'almanac',
@@ -60,6 +60,12 @@ Page({
         name: '文字翻译',
         open: false,
         pages: ['支持自动识别语种', '支持27种语言的翻译哟']
+      },
+      {
+        id: 'airquality',
+        name: '空气质量',
+        open: false,
+        pages: ['支持搜索城市空气质量']
       }
     ]
   },
